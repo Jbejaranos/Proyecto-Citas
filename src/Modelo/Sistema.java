@@ -72,4 +72,43 @@ public class Sistema {
         this.consultorios = consultorios;
     }
     
+    
+    
+    
+       
+    
+    //*************************
+    
+   //METODOS ESTATICOS 
+    
+    
+    public static void agregar_paciente(Paciente paciente, Sistema sistema){
+        sistema.pacientes.add(paciente);
+    }
+    
+    
+    public static Paciente encontrar_paciente(long id, Sistema sistema){
+        
+        Paciente paciente_comparar;
+        
+        int l = sistema.pacientes.size();
+        
+        for(int i = 0;i<l; i++){
+            paciente_comparar = sistema.pacientes.get(i);
+            if(paciente_comparar.getIdentificacion() == id){
+                return paciente_comparar;
+            }
+        }
+        return null;
+    }
+    
+    public static void eliminar_paciente (long id, Sistema sistema){
+        Paciente paciente_borrar;
+        paciente_borrar = encontrar_paciente(id, sistema);
+        
+        sistema.pacientes.remove(paciente_borrar);
+    }
+    
+    //*************************
+    
 }
