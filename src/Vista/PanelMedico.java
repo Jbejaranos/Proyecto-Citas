@@ -70,8 +70,8 @@ public class PanelMedico extends javax.swing.JPanel {
 
     private void BTHorarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTHorarioActionPerformed
         //Crear panel horario
-        CitasMedico PR = new  CitasMedico();
-        PR.setSize(1000, 1000);
+        CitasMedico PR = new  CitasMedico(Vista.Login.med);
+        PR.setSize(700, 700);
         PR.setLocation(0,0);
         panelVariante.removeAll();
         panelVariante.add(PR,BorderLayout.CENTER);
