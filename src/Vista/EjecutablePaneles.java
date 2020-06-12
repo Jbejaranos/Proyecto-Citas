@@ -162,7 +162,7 @@ public class EjecutablePaneles extends javax.swing.JFrame {
 //        jPanel1.removeAll();
 //        jPanel1.add(nu);
 //        jPanel1.setVisible(true);
-
+        VentanaHome.controlSesion.restart();
 
      
         NuevoUsuario PR = new  NuevoUsuario();
@@ -176,6 +176,7 @@ public class EjecutablePaneles extends javax.swing.JFrame {
 
     private void B_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_eliminarActionPerformed
         // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
         Eliminar_usuario PR = new  Eliminar_usuario();
         PR.setSize(1000, 1000);
         PR.setLocation(0,0);
@@ -187,6 +188,7 @@ public class EjecutablePaneles extends javax.swing.JFrame {
 
     private void B_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_loginActionPerformed
         // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
         Login PR = new  Login();
         PR.setSize(1000, 1000);
         PR.setLocation(0,0);
@@ -198,6 +200,7 @@ public class EjecutablePaneles extends javax.swing.JFrame {
 
     private void crearCitasBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearCitasBActionPerformed
         // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
         CrearCitas CC = new CrearCitas();
         CC.setSize(600, 600);
         CC.setLocation(0,0);

@@ -200,27 +200,32 @@ public class NuevoUsuario extends javax.swing.JPanel {
 
     private void TFDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFDocumentoActionPerformed
         // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
     }//GEN-LAST:event_TFDocumentoActionPerformed
 
     private void TFNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFNombreActionPerformed
         // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
     }//GEN-LAST:event_TFNombreActionPerformed
 
     private void CBSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBSexoActionPerformed
         // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
     }//GEN-LAST:event_CBSexoActionPerformed
 
     private void TFClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFClaveActionPerformed
         // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
     }//GEN-LAST:event_TFClaveActionPerformed
 
     private void CBMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBMesActionPerformed
         // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
     }//GEN-LAST:event_CBMesActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+        VentanaHome.controlSesion.restart();
        
         
         

@@ -88,4 +88,22 @@ public class PacienteDAO {
             return ret;
         }
     }
+    
+    public boolean checkPacientesEmpty(){
+        boolean ret = false;
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        Query q = em.createQuery("SELECT * FROM pacientes");
+        try{
+            int size = q.getResultList().size();
+            if(size == 0)
+                ret = true;
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            em.close();
+            return ret;
+        }
+    }
+    
 }

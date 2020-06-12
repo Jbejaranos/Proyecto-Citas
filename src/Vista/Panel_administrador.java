@@ -132,6 +132,7 @@ public class Panel_administrador extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
         NuevoUsuario PR = new  NuevoUsuario();
         PR.setSize(1000, 1000);
         PR.setLocation(0,0);
@@ -143,6 +144,7 @@ public class Panel_administrador extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
         Eliminar_usuario PR = new  Eliminar_usuario();
         PR.setSize(1000, 1000);
         PR.setLocation(0,0);
@@ -154,6 +156,7 @@ public class Panel_administrador extends javax.swing.JPanel {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
         CrearCitas CC = new CrearCitas();
         CC.setSize(1000, 1000);
         //CC.setSize(510, 350);
@@ -166,6 +169,7 @@ public class Panel_administrador extends javax.swing.JPanel {
 
     private void Crear_medicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_medicoActionPerformed
         // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
         NuevoMedico PR = new  NuevoMedico();
         PR.setSize(1000, 1000);
         PR.setLocation(0,0);

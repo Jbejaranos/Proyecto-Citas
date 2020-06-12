@@ -23,6 +23,7 @@ public class VentanaHome extends javax.swing.JFrame {
      */
     
     public static Sistema Sistema_principal = new Sistema();
+    public static ControlSesion controlSesion = ControlSesion.getControlSesion();
     
     public VentanaHome() {
         initComponents();
@@ -35,7 +36,7 @@ public class VentanaHome extends javax.swing.JFrame {
         Panel_variante.repaint();
         
         Panel_desarrollo.setVisible(false);
-        
+        controlSesion.start();
     }
 
     /**
@@ -193,6 +194,7 @@ public class VentanaHome extends javax.swing.JFrame {
 
     private void crearUSUARIOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearUSUARIOActionPerformed
         // TODO add your handling code here:
+        controlSesion.restart();
         NuevoUsuario PR = new  NuevoUsuario();
         PR.setSize(1000, 1000);
         PR.setLocation(0,0);
@@ -204,6 +206,7 @@ public class VentanaHome extends javax.swing.JFrame {
 
     private void Ir_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ir_loginActionPerformed
         // TODO add your handling code here:
+        controlSesion.restart();
         Login PR = new  Login();
         PR.setSize(1000, 1000);
         PR.setLocation(0,0);
@@ -215,6 +218,7 @@ public class VentanaHome extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        controlSesion.restart();
         CrearCitas PR = new  CrearCitas();
         PR.setSize(1000, 1000);
         PR.setLocation(0,0);
@@ -226,7 +230,7 @@ public class VentanaHome extends javax.swing.JFrame {
 
     private void pacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacienteActionPerformed
         // TODO add your handling code here:
-        
+        controlSesion.restart();
         Panel_pacientes PR = new  Panel_pacientes();
         PR.setSize(1000, 1000);
         PR.setLocation(0,0);
@@ -239,6 +243,7 @@ public class VentanaHome extends javax.swing.JFrame {
 
     private void AdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminActionPerformed
         // TODO add your handling code here:
+        controlSesion.restart();
         Panel_administrador PR = new  Panel_administrador();
         PR.setSize(1000, 1000);
         PR.setLocation(0,0);
@@ -250,6 +255,7 @@ public class VentanaHome extends javax.swing.JFrame {
 
     private void Iniciar_una_sesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Iniciar_una_sesionActionPerformed
         // TODO add your handling code here:
+        controlSesion.restart();
         Login PR = new  Login();
         PR.setSize(1000, 1000);
         PR.setLocation(0,0);

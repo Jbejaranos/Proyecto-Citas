@@ -88,4 +88,22 @@ public class MedicoDAO {
             return ret;
         }
     }
+    
+    public boolean checkMedicosEmpty(){
+        boolean ret = false;
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        Query q = em.createQuery("SELECT * FROM medicos");
+        try{
+            int size = q.getResultList().size();
+            if(size == 0)
+                ret = true;
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            em.close();
+            return ret;
+        }
+    }
+    
 }
