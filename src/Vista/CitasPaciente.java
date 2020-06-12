@@ -56,9 +56,10 @@ public class CitasPaciente extends javax.swing.JPanel {
         tituloPanel = new javax.swing.JLabel();
         tablaCitas = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        mensajeError = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         verDetallesB = new javax.swing.JButton();
         cancelarCitaB = new javax.swing.JButton();
-        mensajeError = new javax.swing.JLabel();
 
         tituloPanel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         tituloPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -74,6 +75,8 @@ public class CitasPaciente extends javax.swing.JPanel {
         ));
         tablaCitas.setViewportView(jTable1);
 
+        mensajeError.setText("Pruebas");
+
         verDetallesB.setText("Ver detalles");
         verDetallesB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,7 +91,26 @@ public class CitasPaciente extends javax.swing.JPanel {
             }
         });
 
-        mensajeError.setText("Pruebas");
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(verDetallesB)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
+                .addComponent(cancelarCitaB)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(verDetallesB)
+                    .addComponent(cancelarCitaB))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -97,21 +119,22 @@ public class CitasPaciente extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(136, 136, 136)
-                        .addComponent(tituloPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(136, 136, 136)
+                                .addComponent(tituloPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(tablaCitas, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 5, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(tablaCitas, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(15, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(mensajeError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(verDetallesB)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cancelarCitaB)))
-                .addGap(95, 95, 95))
+                        .addGap(41, 41, 41)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(mensajeError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,23 +143,22 @@ public class CitasPaciente extends javax.swing.JPanel {
                 .addComponent(tituloPanel)
                 .addGap(28, 28, 28)
                 .addComponent(tablaCitas, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(verDetallesB)
-                    .addComponent(cancelarCitaB))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(mensajeError)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void verDetallesBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verDetallesBActionPerformed
         // TODO add your handling code here:
-        
+        VentanaHome.controlSesion.restart();
     }//GEN-LAST:event_verDetallesBActionPerformed
 
     private void cancelarCitaBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarCitaBActionPerformed
         // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
         int seleccion = jTable1.getSelectedRow();
         if(seleccion != -1){
             boolean result = paciente.cancelarCita(paciente.getCitasRegistradas().get(seleccion).getFecha());
@@ -164,6 +186,7 @@ public class CitasPaciente extends javax.swing.JPanel {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelarCitaB;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel mensajeError;
     private javax.swing.JScrollPane tablaCitas;

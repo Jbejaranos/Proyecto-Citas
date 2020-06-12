@@ -87,4 +87,21 @@ public class AdministradorDAO {
             return ret;
         }
     }
+    
+    public static boolean checkAdminsEmpty(){
+        boolean ret = false;
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        Query q = em.createQuery("SELECT * FROM administradores");
+        try{
+            int size = q.getResultList().size();
+            if(size == 0)
+                ret = true;
+        } catch(Exception e){
+            e.printStackTrace();
+        } finally{
+            em.close();
+            return ret;
+        }
+    }
 }

@@ -150,91 +150,85 @@ public class Login extends javax.swing.JPanel {
 
     private void TFDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFDocumentoActionPerformed
         // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
     }//GEN-LAST:event_TFDocumentoActionPerformed
 
     private void BIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BIngresarActionPerformed
-
         
-    String rol_sesion = CBRol.getSelectedItem().toString();
-    
-    String entrada = new String(PFClave.getPassword());
-    TestLabel.setText(entrada);
-    
-    switch (rol_sesion){
+        VentanaHome.controlSesion.restart();
+        String rol_sesion = CBRol.getSelectedItem().toString();
 
-        case "Paciente":
-            pac = encontrarPaciente(Integer.valueOf(TFDocumento.getText()),Vista.VentanaHome.Sistema_principal);
-            
-            if(pac != null){
-               if(pac.getPassword().equals(entrada)){
-                   TFTest.setText("Autenticado");
-                   
-                    //Acceder seccion usuario
-                    Panel_pacientes PR = new  Panel_pacientes();
-                    PR.setSize(1000, 1000);
-                    PR.setLocation(0,0);
-                    Vista.VentanaHome.Panel_variante.removeAll();
-                    Vista.VentanaHome.Panel_variante.add(PR,BorderLayout.CENTER);
-                    Vista.VentanaHome.Panel_variante.revalidate();
-                    Vista.VentanaHome.Panel_variante.repaint();
-        
+        String entrada = new String(PFClave.getPassword());
+        TestLabel.setText(entrada);
+
+        switch (rol_sesion){
+
+            case "Paciente":
+                pac = encontrarPaciente(Integer.valueOf(TFDocumento.getText()),Vista.VentanaHome.Sistema_principal);
+
+                if(pac != null){
+                   if(pac.getPassword().equals(entrada)){
+                       TFTest.setText("Autenticado");
+
+                        //Acceder seccion usuario
+                        Panel_pacientes PR = new  Panel_pacientes();
+                        PR.setSize(1000, 1000);
+                        PR.setLocation(0,0);
+                        Vista.VentanaHome.Panel_variante.removeAll();
+                        Vista.VentanaHome.Panel_variante.add(PR,BorderLayout.CENTER);
+                        Vista.VentanaHome.Panel_variante.revalidate();
+                        Vista.VentanaHome.Panel_variante.repaint();
+
+                   }else{
+                       TFTest.setText("Intente de nuevo");    
+                   }
                }else{
-                   TFTest.setText("Intente de nuevo");    
+                   TFTest.setText("Usuario inexistente");
                }
-           }else{
-               TFTest.setText("Usuario inexistente");
-           }
-             
-            break;
 
-        case "Médico":
-            
-            med = encontrarMedico(Integer.valueOf(TFDocumento.getText()),Vista.VentanaHome.Sistema_principal);
-            
-            if(med != null){
-               if(med.getPassword().equals(entrada)){
-                   TFTest.setText("Autenticado");
-                   
-                    //Acceder seccion usuario
-                    PanelMedico PM = new  PanelMedico();
-                    PM.setSize(1000, 1000);
-                    PM.setLocation(0,0);
-                    Vista.VentanaHome.Panel_variante.removeAll();
-                    Vista.VentanaHome.Panel_variante.add(PM,BorderLayout.CENTER);
-                    Vista.VentanaHome.Panel_variante.revalidate();
-                    Vista.VentanaHome.Panel_variante.repaint();
-        
+                break;
+
+            case "Médico":
+
+                med = encontrarMedico(Integer.valueOf(TFDocumento.getText()),Vista.VentanaHome.Sistema_principal);
+
+                if(med != null){
+                   if(med.getPassword().equals(entrada)){
+                       TFTest.setText("Autenticado");
+
+                        //Acceder seccion usuario
+                        PanelMedico PM = new  PanelMedico();
+                        PM.setSize(1000, 1000);
+                        PM.setLocation(0,0);
+                        Vista.VentanaHome.Panel_variante.removeAll();
+                        Vista.VentanaHome.Panel_variante.add(PM,BorderLayout.CENTER);
+                        Vista.VentanaHome.Panel_variante.revalidate();
+                        Vista.VentanaHome.Panel_variante.repaint();
+
+                   }else{
+                       TFTest.setText("Intente de nuevo");    
+                   }
                }else{
-                   TFTest.setText("Intente de nuevo");    
+                   TFTest.setText("Medico inexistente");
                }
-           }else{
-               TFTest.setText("Medico inexistente");
-           }
-            
-            break;
 
-        case "Administrador":
-            
-            break;
-  }
-        
+                break;
 
-    
-    
-    
+            case "Administrador":
 
-    
-   
-        
+                break;
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_BIngresarActionPerformed
 
     private void TFTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFTestActionPerformed
         // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
     }//GEN-LAST:event_TFTestActionPerformed
 
     private void CBRolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBRolActionPerformed
         // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
     }//GEN-LAST:event_CBRolActionPerformed
 
 

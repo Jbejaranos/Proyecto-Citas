@@ -103,8 +103,7 @@ public class Panel_pacientes extends javax.swing.JPanel {
 
     private void B_citasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_citasActionPerformed
         // TODO add your handling code here:
-        
-        
+        VentanaHome.controlSesion.restart();
         CitasPaciente PR = new  CitasPaciente(Vista.Login.pac);
         PR.setSize(1000, 1000);
         PR.setLocation(0,0);
@@ -116,6 +115,7 @@ public class Panel_pacientes extends javax.swing.JPanel {
 
     private void registroCitaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registroCitaButtonActionPerformed
         // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
         AsignacionCita AC = new AsignacionCita(Vista.Login.pac);
         AC.setSize(1000, 1000);
         AC.setLocation(0,0);

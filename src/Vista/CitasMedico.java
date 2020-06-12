@@ -5,16 +5,26 @@
  */
 package Vista;
 
+import static Vista.VentanaHome.Sistema_principal;
+import Modelo.*;
+import static Vista.CitasPaciente.getTextoFecha;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JFrame;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import java.util.Calendar;
 /**
  *
  * @author USER
  */
 public class CitasMedico extends javax.swing.JPanel {
 
+    private Medico md;
     /**
      * Creates new form CitasMedico
      */
-    public CitasMedico() {
+    public CitasMedico(Medico med) {
+        this.md = med;
         initComponents();
     }
 
@@ -28,29 +38,134 @@ public class CitasMedico extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TablaHorario = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        BVer = new javax.swing.JButton();
+        TFSemana = new javax.swing.JTextField();
+
+        setBackground(new java.awt.Color(0, 102, 51));
+        setPreferredSize(new java.awt.Dimension(800, 800));
 
         jLabel1.setText("Horario del Medico");
+
+        TablaHorario.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"7", null, null, null, null, null, null},
+                {"8", null, null, null, null, null, null},
+                {"9", null, null, null, null, null, null},
+                {"10", null, null, null, null, null, null},
+                {"11", null, null, null, null, null, null},
+                {"12", null, null, null, null, null, null},
+                {"13", null, null, null, null, null, null},
+                {"14", null, null, null, null, null, null},
+                {"15", null, null, null, null, null, null},
+                {"16", null, null, null, null, null, null},
+                {"17", null, null, null, null, null, null},
+                {"18", null, null, null, null, null, null}
+            },
+            new String [] {
+                "Hora", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(TablaHorario);
+
+        jLabel2.setText("Escriba el numero de semana");
+
+        BVer.setBackground(new java.awt.Color(0, 102, 0));
+        BVer.setText("Ver Horario");
+        BVer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BVerActionPerformed(evt);
+            }
+        });
+
+        TFSemana.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TFSemanaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(144, 144, 144)
-                .addComponent(jLabel1)
-                .addContainerGap(150, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 675, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(153, 153, 153)
+                        .addComponent(jLabel2)
+                        .addGap(69, 69, 69)
+                        .addComponent(TFSemana, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(277, 277, 277)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(BVer))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addGap(33, 33, 33)
                 .addComponent(jLabel1)
-                .addContainerGap(245, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(TFSemana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(BVer)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(56, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void TFSemanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFSemanaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TFSemanaActionPerformed
 
+    private void BVerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BVerActionPerformed
+        // TODO add your handling code here:
+        String sem = TFSemana.getText();
+        int semn;
+        try{
+            semn = Integer.parseInt(sem);
+            generarHorario(semn);
+        } catch (NumberFormatException e){
+            JFrame parent = new JFrame();
+            JOptionPane.showMessageDialog(parent, "Texto ingresado no es un numero.","Entrada inválida",JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_BVerActionPerformed
+
+    private void generarHorario(int semana){
+        if (md.getCitasAsignadas()!=null){
+            for(Cita i : md.getCitasAsignadas()){
+                if (i.getFecha().get(Calendar.WEEK_OF_YEAR)==semana){
+                    
+                }
+            }
+        }
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BVer;
+    private javax.swing.JTextField TFSemana;
+    private javax.swing.JTable TablaHorario;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

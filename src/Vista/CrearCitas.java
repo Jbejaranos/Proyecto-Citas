@@ -210,14 +210,17 @@ public class CrearCitas extends javax.swing.JPanel {
 
     private void diaComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diaComboBoxActionPerformed
         // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
     }//GEN-LAST:event_diaComboBoxActionPerformed
 
     private void mesComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mesComboBoxActionPerformed
         // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
     }//GEN-LAST:event_mesComboBoxActionPerformed
 
     private void mesComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_mesComboBoxItemStateChanged
         // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
         int dias;
         switch((String) mesComboBox.getSelectedItem()){
             case "Enero":
@@ -247,6 +250,7 @@ public class CrearCitas extends javax.swing.JPanel {
 
     private void aceptarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarButtonActionPerformed
         // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
         int dia = (int) (diaComboBox.getSelectedItem());
         int mes = mesEnt((String) mesComboBox.getSelectedItem());
         int year = Integer.parseInt((String) yearComboBox.getSelectedItem());

@@ -132,11 +132,12 @@ public class Eliminar_usuario extends javax.swing.JPanel {
 
     private void TFDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFDocumentoActionPerformed
         // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
     }//GEN-LAST:event_TFDocumentoActionPerformed
 
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
         // TODO add your handling code here:
-        
+        VentanaHome.controlSesion.restart();
         Paciente pac1;
         //Sistema system = new Sistema();
         pac1 = encontrarPaciente(Integer.valueOf(TFDocumento.getText()),Vista.VentanaHome.Sistema_principal);
@@ -150,11 +151,12 @@ public class Eliminar_usuario extends javax.swing.JPanel {
 
     private void TFEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFEstadoActionPerformed
         // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
     }//GEN-LAST:event_TFEstadoActionPerformed
 
     private void VerInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerInfoActionPerformed
         // TODO add your handling code here:
-        
+        VentanaHome.controlSesion.restart();
         Paciente pac;
         //Sistema system = new Sistema();
         
