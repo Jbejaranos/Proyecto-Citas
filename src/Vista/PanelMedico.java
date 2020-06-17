@@ -31,6 +31,9 @@ public class PanelMedico extends javax.swing.JPanel {
 
         panelVariante = new javax.swing.JPanel();
         BTHorario = new javax.swing.JButton();
+        B_mis_datos = new javax.swing.JButton();
+
+        panelVariante.setBackground(new java.awt.Color(255, 204, 255));
 
         BTHorario.setText("Horario");
         BTHorario.addActionListener(new java.awt.event.ActionListener() {
@@ -39,32 +42,49 @@ public class PanelMedico extends javax.swing.JPanel {
             }
         });
 
+        B_mis_datos.setText("Mis datos");
+        B_mis_datos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_mis_datosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelVarianteLayout = new javax.swing.GroupLayout(panelVariante);
         panelVariante.setLayout(panelVarianteLayout);
         panelVarianteLayout.setHorizontalGroup(
             panelVarianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelVarianteLayout.createSequentialGroup()
-                .addGap(45, 45, 45)
+                .addGap(286, 286, 286)
+                .addComponent(B_mis_datos)
+                .addGap(39, 39, 39)
                 .addComponent(BTHorario)
-                .addContainerGap(283, Short.MAX_VALUE))
+                .addContainerGap(536, Short.MAX_VALUE))
         );
         panelVarianteLayout.setVerticalGroup(
             panelVarianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelVarianteLayout.createSequentialGroup()
-                .addGap(129, 129, 129)
-                .addComponent(BTHorario)
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addGap(189, 189, 189)
+                .addGroup(panelVarianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(B_mis_datos)
+                    .addComponent(BTHorario))
+                .addContainerGap(242, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelVariante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelVariante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelVariante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelVariante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(28, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -80,9 +100,22 @@ public class PanelMedico extends javax.swing.JPanel {
         panelVariante.repaint(); 
     }//GEN-LAST:event_BTHorarioActionPerformed
 
+    private void B_mis_datosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_mis_datosActionPerformed
+        // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
+        panelDatosDoctor PR = new  panelDatosDoctor();
+        PR.setSize(1000, 1000);
+        PR.setLocation(0,0);
+        panelVariante.removeAll();
+        panelVariante.add(PR ,BorderLayout.CENTER);
+        panelVariante.revalidate();
+        panelVariante.repaint();
+    }//GEN-LAST:event_B_mis_datosActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BTHorario;
+    private javax.swing.JButton B_mis_datos;
     private javax.swing.JPanel panelVariante;
     // End of variables declaration//GEN-END:variables
 }

@@ -34,7 +34,7 @@ public class Panel_pacientes extends javax.swing.JPanel {
         B_citas = new javax.swing.JButton();
         registroCitaButton = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        B_mis_datos = new javax.swing.JButton();
 
         Panel_variante.setBackground(new java.awt.Color(102, 153, 255));
 
@@ -54,7 +54,12 @@ public class Panel_pacientes extends javax.swing.JPanel {
 
         jButton3.setText("B");
 
-        jButton4.setText("c");
+        B_mis_datos.setText("Mis datos");
+        B_mis_datos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_mis_datosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Panel_varianteLayout = new javax.swing.GroupLayout(Panel_variante);
         Panel_variante.setLayout(Panel_varianteLayout);
@@ -68,7 +73,7 @@ public class Panel_pacientes extends javax.swing.JPanel {
                 .addGap(13, 13, 13)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(B_mis_datos, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(65, Short.MAX_VALUE))
         );
         Panel_varianteLayout.setVerticalGroup(
@@ -79,7 +84,7 @@ public class Panel_pacientes extends javax.swing.JPanel {
                     .addComponent(B_citas, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(registroCitaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(B_mis_datos, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(163, Short.MAX_VALUE))
         );
 
@@ -125,12 +130,24 @@ public class Panel_pacientes extends javax.swing.JPanel {
         Panel_variante.repaint();
     }//GEN-LAST:event_registroCitaButtonActionPerformed
 
+    private void B_mis_datosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_mis_datosActionPerformed
+        // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
+        panelDatosUsuario AC = new panelDatosUsuario();
+        AC.setSize(1000, 1000);
+        AC.setLocation(0,0);
+        Panel_variante.removeAll();
+        Panel_variante.add(AC ,BorderLayout.CENTER);
+        Panel_variante.revalidate();
+        Panel_variante.repaint();
+    }//GEN-LAST:event_B_mis_datosActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton B_citas;
+    private javax.swing.JButton B_mis_datos;
     private javax.swing.JPanel Panel_variante;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton registroCitaButton;
     // End of variables declaration//GEN-END:variables
 }

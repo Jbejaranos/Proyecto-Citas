@@ -64,7 +64,7 @@ public class NuevoMedico extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         TAResultados = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        CB_especialidad = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 153));
@@ -131,8 +131,8 @@ public class NuevoMedico extends javax.swing.JPanel {
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel6.setText("Inscribir nuevo Médico");
 
-        jComboBox1.setBackground(new java.awt.Color(0, 153, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "General", "Alergología", "Anestesiología", "Cardiología", "Gastroenterología", "Endocrinología", "Epidemiología", "Geriatría", "Hepatología", "Hematología", "Infectología", "Medicina familiar y comunitaria", "Medicina física y rehabilitación", "Medicina intensiva", "Medicina interna", "Medicina preventiva y salud pública", "Nefrología", "Neumología", "Neurología", "Nutriología", "Oncología", "Pediatría", "Psiquiatría", "Reumatología", "Toxicología" }));
+        CB_especialidad.setBackground(new java.awt.Color(0, 153, 255));
+        CB_especialidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "General", "Alergología", "Anestesiología", "Cardiología", "Gastroenterología", "Endocrinología", "Epidemiología", "Geriatría", "Hepatología", "Hematología", "Infectología", "Medicina familiar y comunitaria", "Medicina física y rehabilitación", "Medicina intensiva", "Medicina interna", "Medicina preventiva y salud pública", "Nefrología", "Neumología", "Neurología", "Nutriología", "Oncología", "Pediatría", "Psiquiatría", "Reumatología", "Toxicología" }));
 
         jLabel7.setText("Especialidad");
 
@@ -176,7 +176,7 @@ public class NuevoMedico extends javax.swing.JPanel {
                                         .addGap(47, 47, 47)
                                         .addComponent(jLabel7)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(CB_especialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(CBDia, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
@@ -215,7 +215,7 @@ public class NuevoMedico extends javax.swing.JPanel {
                     .addComponent(CBYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CB_especialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addGap(18, 18, 18)
                 .addComponent(GuardarMedico)
@@ -265,8 +265,8 @@ public class NuevoMedico extends javax.swing.JPanel {
         documento = Integer.valueOf(TFDocumento.getText());
         nombre = TFNombre.getText();
         sexo = CBSexo.getSelectedItem().toString();
-        especialidad = CBSexo.getSelectedItem().toString();
-        clave = TFClave.getText();
+        especialidad = CB_especialidad.getSelectedItem().toString();
+        clave = TFClave.getText();                                                                      //-------------[]reparado 14 de junio
         GregorianCalendar nacimiento = crear_horario(Integer.valueOf(CBYear.getSelectedItem().toString()),
                                         Integer.valueOf(switch_mes(CBMes.getSelectedItem().toString())),
                                         Integer.valueOf(CBDia.getSelectedItem().toString()),0,0);
@@ -309,12 +309,12 @@ public class NuevoMedico extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> CBMes;
     private javax.swing.JComboBox<String> CBSexo;
     private javax.swing.JComboBox<String> CBYear;
+    private javax.swing.JComboBox<String> CB_especialidad;
     private javax.swing.JButton GuardarMedico;
     private javax.swing.JTextArea TAResultados;
     private javax.swing.JTextField TFClave;
     private javax.swing.JTextField TFDocumento;
     private javax.swing.JTextField TFNombre;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

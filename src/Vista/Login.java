@@ -167,7 +167,7 @@ public class Login extends javax.swing.JPanel {
                 pac = encontrarPaciente(Integer.valueOf(TFDocumento.getText()),Vista.VentanaHome.Sistema_principal);
 
                 if(pac != null){
-                   if(pac.getPassword().equals(entrada)){
+                   if( Modelo.Encriptacion.desencriptar(pac.getPassword()).equals(entrada)){    //14 de junio se agrego encriptado ---------------[]
                        TFTest.setText("Autenticado");
 
                         //Acceder seccion usuario

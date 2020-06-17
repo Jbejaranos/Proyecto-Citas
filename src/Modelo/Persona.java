@@ -33,13 +33,37 @@ public class Persona {
     private String genero;
     @Temporal(TemporalType.DATE)
     private Calendar fechaNacimiento;
-
+    
+    
+    
+    
+    /*
+    ________________________________________________________________________________________________uwu
+    NUEVO NUEVO NUEVO !!    14 de junio by jortizsi
+    referencia a datos de contacto
+    */
+    private ContactoPaciente datosContacto;
+    
+    public void setContactoPaciente(ContactoPaciente Cpac){
+        this.datosContacto = Cpac;
+    }
+    
+    public ContactoPaciente getContactoPaciente(){
+        return datosContacto;
+    }
+    //_______________________________________________________________________________________________uwu
+            
+            
+            
+            
+            
     public Persona(long identificacion, String nombre, String password, String genero, Calendar fechaNacimiento) {
         this.identificacion = identificacion;
         this.nombre = nombre;
         this.password = password;
         this.genero = genero;
         this.fechaNacimiento = fechaNacimiento;
+        this.datosContacto = null;
     }
 
     public long getIdentificacion() {
