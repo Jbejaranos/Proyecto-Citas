@@ -49,4 +49,7 @@ public class Medico extends Persona{
         this.especialidad = especialidad;
     }
     
+    public void addCitaMd(Cita c){
+        this.citasAsignadas.add(c);
+    }
 }

@@ -54,4 +54,8 @@ public class Consultorio {
         this.numero = numero;
     }
     
+    @Override
+    public String toString(){
+        return this.sede + this.numero;
+    }
 }
