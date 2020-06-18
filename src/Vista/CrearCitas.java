@@ -265,7 +265,7 @@ public class CrearCitas extends javax.swing.JPanel {
             }
         }else{
             if(idMedico == -1){
-                Sistema.addCitasSemana(dia, dia, mes, year, especialidad, Vista.VentanaHome.Sistema_principal);
+                Sistema.addCitasSemana(dia, diaSemana(dia, mes, year), mes, year, especialidad, Vista.VentanaHome.Sistema_principal);
             }else{
                 Sistema.addCitasSemana(dia, diaSemana(dia, mes, year), mes, year, especialidad, idMedico, Vista.VentanaHome.Sistema_principal);
             }

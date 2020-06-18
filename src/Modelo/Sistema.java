@@ -95,7 +95,7 @@ public class Sistema {
             }
         }
         
-        Calendar fecha = new GregorianCalendar(year, mes - 1, dia, hora, minuto);
+        Calendar fecha = new GregorianCalendar(year, mes - 1, dia, hora - 1, minuto);
         Cita cita = new Cita(fecha, null, medico, consultorio, especialidad);
         for(Cita c: sistema.citas){
             if(c.equals(cita)){
@@ -104,6 +104,7 @@ public class Sistema {
         }
         if(check){
             sistema.citas.add(cita);
+            medico.addCitaMd(cita);
         }else{
             System.out.println("La cita ya exite");
         }
@@ -137,6 +138,7 @@ public class Sistema {
                 dia = 1;
             }
             addCitasDia(dia, m, y, 7, especialidad, sistema);
+            dia++;
         }
     }
     
@@ -154,6 +156,7 @@ public class Sistema {
                 dia = 1;
             }
             addCitasDia(dia, m, y, 7, especialidad, idMedico, sistema);
+            dia++;
         }
     }
     
