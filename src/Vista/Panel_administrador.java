@@ -35,6 +35,7 @@ public class Panel_administrador extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         Crear_medico = new javax.swing.JButton();
+        consultBtn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(51, 102, 255));
 
@@ -81,6 +82,13 @@ public class Panel_administrador extends javax.swing.JPanel {
             }
         });
 
+        consultBtn.setText("Consultorios");
+        consultBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -93,8 +101,10 @@ public class Panel_administrador extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Crear_medico)
-                .addContainerGap(318, Short.MAX_VALUE))
+                .addComponent(Crear_medico, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(consultBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(210, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,7 +114,8 @@ public class Panel_administrador extends javax.swing.JPanel {
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3)
-                    .addComponent(Crear_medico))
+                    .addComponent(Crear_medico)
+                    .addComponent(consultBtn))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -179,10 +190,23 @@ public class Panel_administrador extends javax.swing.JPanel {
         Panel_variante.repaint(); 
     }//GEN-LAST:event_Crear_medicoActionPerformed
 
+    private void consultBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultBtnActionPerformed
+        // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
+        Consultorios CS = new Consultorios();
+        CS.setSize(1000, 1000);
+        CS.setLocation(0, 0);
+        Panel_variante.removeAll();
+        Panel_variante.add(CS, BorderLayout.CENTER);
+        Panel_variante.revalidate();
+        Panel_variante.repaint();
+    }//GEN-LAST:event_consultBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Crear_medico;
     private javax.swing.JPanel Panel_variante;
+    private javax.swing.JButton consultBtn;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

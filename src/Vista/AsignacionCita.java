@@ -8,6 +8,7 @@ package Vista;
 import Modelo.Cita;
 import Modelo.Paciente;
 import Modelo.Sistema;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -57,7 +58,6 @@ public class AsignacionCita extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         citasTable = new javax.swing.JTable();
         labelInstr = new javax.swing.JLabel();
-        mensajeError = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         detallesButton = new javax.swing.JButton();
         RegistrarseButton = new javax.swing.JButton();
@@ -118,17 +118,12 @@ public class AsignacionCita extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(mensajeError))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelInstr)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(labelInstr)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -142,9 +137,7 @@ public class AsignacionCita extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addComponent(mensajeError)
-                .addGap(24, 24, 24))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -166,13 +159,25 @@ public class AsignacionCita extends javax.swing.JPanel {
             }
             JOptionPane.showMessageDialog(null, "Ha sido registrado en la cita");
         }else{
-            mensajeError.setText("Por favor seleccione una cita");
+            JOptionPane.showMessageDialog(null, "Por favor seleccione una cita");
         }
     }//GEN-LAST:event_RegistrarseButtonActionPerformed
 
     private void detallesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detallesButtonActionPerformed
         // TODO add your handling code here:
         VentanaHome.controlSesion.restart();
+        int seleccion = citasTable.getSelectedRow();
+        if(seleccion != -1){
+            Cita cita = this.citasDisponibles.get(seleccion);
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+            String fecha = "Fecha: " + formato.format(cita.getFecha().getTime()) + "\n";
+            String medico = "Medico: " + cita.getMedico().getNombre() + "\n";
+            String especialidad = "Especialidad: " + cita.getEspecialidad() + "\n";
+            String consultorio = "Lugar: Consultorio " + cita.getConsultorio().getNumero() + ", sede " + cita.getConsultorio().getSede() + "\n";
+            JOptionPane.showMessageDialog(null, fecha + medico + especialidad + consultorio);
+        }else{
+            JOptionPane.showMessageDialog(null, "Por favor seleccione una cita");
+        }
     }//GEN-LAST:event_detallesButtonActionPerformed
 
     
@@ -184,6 +189,5 @@ public class AsignacionCita extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelInstr;
     private javax.swing.JLabel labelPanel;
-    private javax.swing.JLabel mensajeError;
     // End of variables declaration//GEN-END:variables
 }

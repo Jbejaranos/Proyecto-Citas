@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="ff" green="cc" red="cc" type="rgb"/>
+    </Property>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="250" max="-2" attributes="0"/>
+                      <Component id="panelLabel" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="nombreLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="fechaLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="especialidadLabel" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="nombreTF" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
+                                  <Component id="espComboBox" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
+                                  <Component id="fechaTF" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="idLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="passwordLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="idTF" max="32767" attributes="0"/>
+                                  <Component id="generoComboBox" pref="109" max="32767" attributes="0"/>
+                                  <Component id="passwordTF" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="intruccionesLabel" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="80" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="panelLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="intruccionesLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="nombreTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="nombreLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="idLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="idTF" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="generoComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="espComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="especialidadLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="fechaTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fechaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="passwordLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="passwordTF" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="37" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="panelLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="11" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Creaci&#xf3;n m&#xe9;dico"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="intruccionesLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Por favor ingrese la siguiente informaci&#xf3;n para crear la cuenta del m&#xe9;dico, despu&#xe9;s de click en siguiente."/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="nombreLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nombre"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="nombreTF">
+    </Component>
+    <Component class="javax.swing.JComboBox" name="espComboBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="25">
+            <StringItem index="0" value="General"/>
+            <StringItem index="1" value="Alergolog&#xed;a"/>
+            <StringItem index="2" value="Anestesiolog&#xed;a"/>
+            <StringItem index="3" value="Cardiolog&#xed;a"/>
+            <StringItem index="4" value="Gastroenterolog&#xed;a"/>
+            <StringItem index="5" value="Endocrinolog&#xed;a"/>
+            <StringItem index="6" value="Epidemiolog&#xed;a"/>
+            <StringItem index="7" value="Geriatr&#xed;a"/>
+            <StringItem index="8" value="Hepatolog&#xed;a"/>
+            <StringItem index="9" value="Hematolog&#xed;a"/>
+            <StringItem index="10" value="Infectolog&#xed;a"/>
+            <StringItem index="11" value="Medicina familiar y comunitaria"/>
+            <StringItem index="12" value="Medicina f&#xed;sica y rehabilitaci&#xf3;n"/>
+            <StringItem index="13" value="Medicina intensiva"/>
+            <StringItem index="14" value="Medicina interna"/>
+            <StringItem index="15" value="Medicina preventiva y salud p&#xfa;blica"/>
+            <StringItem index="16" value="Nefrolog&#xed;a"/>
+            <StringItem index="17" value="Neumolog&#xed;a"/>
+            <StringItem index="18" value="Neurolog&#xed;a"/>
+            <StringItem index="19" value="Nutriolog&#xed;a"/>
+            <StringItem index="20" value="Oncolog&#xed;a"/>
+            <StringItem index="21" value="Pediatr&#xed;a"/>
+            <StringItem index="22" value="Psiquiatr&#xed;a"/>
+            <StringItem index="23" value="Reumatolog&#xed;a"/>
+            <StringItem index="24" value="Toxicolog&#xed;a"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="fechaTF">
+    </Component>
+    <Component class="javax.swing.JLabel" name="especialidadLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Especialidad"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="fechaLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Fecha nacimiento"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="idLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Identificaci&#xf3;n"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="G&#xe9;nero"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="passwordLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Contrase&#xf1;a"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="idTF">
+    </Component>
+    <Component class="javax.swing.JComboBox" name="generoComboBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="Masculino"/>
+            <StringItem index="1" value="Femenino"/>
+            <StringItem index="2" value="Otro"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="passwordTF">
+    </Component>
+  </SubComponents>
+</Form>

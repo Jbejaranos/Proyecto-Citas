@@ -32,9 +32,8 @@ public class CrearCitas extends javax.swing.JPanel {
             opciones[i] = i + 1;
         }
         diaComboBox.setModel(new DefaultComboBoxModel<>(opciones));
-        Sistema_principal.getConsultorios().add(new Consultorio("Sede", 1));
-        Sistema_principal.getConsultorios().add(new Consultorio("Sede1", 2));
-        Sistema_principal.getMedicos().add(new Medico(1, "P", "123", "M", null, new ArrayList<>(), "C"));
+        Sistema_principal.getConsultorios().add(new Consultorio(1, "C1", "Sede"));
+        Sistema_principal.getConsultorios().add(new Consultorio(2, "C2", "Sede"));
     }
 
     /**
@@ -116,9 +115,9 @@ public class CrearCitas extends javax.swing.JPanel {
 
         labelEspecialidad.setText("Especialidad");
 
-        espComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E", "F" }));
+        espComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "General", "Alergología", "Anestesiología", "Cardiología", "Gastroenterología", "Endocrinología", "Epidemiología", "Geriatría", "Hepatología", "Hematología", "Infectología", "Medicina familiar y comunitaria", "Medicina física y rehabilitación", "Medicina intensiva", "Medicina interna", "Medicina preventiva y salud pública", "Nefrología", "Neumología", "Neurología", "Nutriología", "Oncología", "Pediatría", "Psiquiatría", "Reumatología", "Toxicología" }));
 
-        labelMedico.setText("Médico");
+        labelMedico.setText("ID Médico");
 
         avisoLabel.setText("Ingrese los siguientes datos");
 

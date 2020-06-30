@@ -22,12 +22,14 @@ public class Consultorio {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
+    private String nombre;
     private String sede;
     private int numero;
 
-    public Consultorio(String sede, int numero) {
-        this.sede = sede;
+    public Consultorio(int numero, String nombre, String sede) {
         this.numero = numero;
+        this.nombre = nombre;
+        this.sede = sede;
     }
 
     public int getId() {
@@ -52,6 +54,14 @@ public class Consultorio {
 
     public void setNumero(int numero) {
         this.numero = numero;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     
     @Override

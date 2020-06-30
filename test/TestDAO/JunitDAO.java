@@ -33,7 +33,7 @@ public class JunitDAO {
     private static Medico med = new Medico(21,"House","12345","M",null,"General");
     private static Paciente pac = new Paciente(11,"Pepito","12345","M",null);
     private static Administrador admin = new Administrador(31,"Alejo","12345","M",null);
-    private static Consultorio con = new Consultorio("f",101);
+    private static Consultorio con = new Consultorio(101, "f", "Sede");
     private static Cita ct = new Cita(null,pac,med,con,"General");
     private static HistoriaClinica hc = new HistoriaClinica(null,pac,null);
     
