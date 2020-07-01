@@ -199,7 +199,7 @@ public class Login extends javax.swing.JPanel {
                 med = encontrarMedico(Integer.valueOf(TFDocumento.getText()),Vista.VentanaHome.Sistema_principal);
 
                 if(med != null){
-                   if(med.getPassword().equals(entrada)){
+                   if(Modelo.Encriptacion.desencriptar(med.getPassword()).equals(entrada)){
                        TFTest.setText("Autenticado");
                         sesion = "medico";
                         //Acceder seccion usuario

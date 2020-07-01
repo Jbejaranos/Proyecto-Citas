@@ -115,18 +115,19 @@ document.close();
         
         String Indicadores = "";
         
-        int PacientesOcupados = 0;
+        double PacientesOcupados = 0;
         try{
-            PacientesOcupados = (PacientesConCitas * 100) / NumPacs;  //PORCENTAJE DE PACIENTES CON UNA O MAS CITAS
+            PacientesOcupados = 
+                    ((double)PacientesConCitas * 100.0) / ((double)NumPacs);  //PORCENTAJE DE PACIENTES CON UNA O MAS CITAS
         }catch(Exception e){
             PacientesOcupados = 0;
         }
         
         
         
-        int AfiliadosXmedico = 0;
+        double AfiliadosXmedico = 0;
         try{
-            AfiliadosXmedico=  NumPacs / (Vista.VentanaHome.Sistema_principal.getMedicos().size());
+            AfiliadosXmedico=  ((double)NumPacs) / ((double)(Vista.VentanaHome.Sistema_principal.getMedicos().size()));
         }catch(Exception e){
             AfiliadosXmedico = 0;
         }
@@ -192,10 +193,12 @@ document.close();
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Datos del Sistema");
 
+        TADatos.setEditable(false);
         TADatos.setColumns(20);
         TADatos.setRows(5);
         jScrollPane1.setViewportView(TADatos);
 
+        TAIndicadores.setEditable(false);
         TAIndicadores.setColumns(20);
         TAIndicadores.setRows(5);
         jScrollPane2.setViewportView(TAIndicadores);

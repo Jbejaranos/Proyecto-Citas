@@ -139,12 +139,14 @@ public class VentanaHome extends javax.swing.JFrame {
             Cita cita = new Cita(fechacita, pac, med,con, "General");
             Sistema_principal.getCitas().add(cita);
             
+            pac.addCita(cita);
+            med.addCitaMd(cita);
             
         }
         
         
         
-        for(long i = 100;i<160;i++){
+        for(long i = 100;i<115;i++){
             
         
         
@@ -160,12 +162,38 @@ public class VentanaHome extends javax.swing.JFrame {
         
         Cita cita = new Cita(fechacita, pac, med,con, especialidades [(int)i%14]);
         Sistema_principal.getCitas().add(cita);
+        
+            pac.addCita(cita);
+            med.addCitaMd(cita);
         }
         
         
         
         
-        for(long i = 160;i<300;i++){
+        
+        
+        for(long i = 115;i<160;i++){
+            
+        
+        
+        
+        Medico med = new Medico(i, "med"+i, encriptar("123"), "Femenino",nacimiento, especialidades[(int)i%14]);
+        Sistema_principal.getMedicos().add(med);
+        
+        Consultorio con = new Consultorio( (int)i, "Consultorio "+i , "Sede Norte");
+        Sistema_principal.getConsultorios().add(con);
+        
+        Paciente pac = new Paciente(i, "pac"+ i, encriptar("123"), "Masculino",nacimiento);
+        Sistema_principal.getPacientes().add(pac);
+        
+        Cita cita = new Cita(fechacita, null, med,con, especialidades [(int)i%20]);
+        Sistema_principal.getCitas().add(cita);
+        }
+        
+        
+        
+        
+        for(long i = 160;i<500;i++){
             
 
         Paciente pac = new Paciente(i, "pac"+ i, encriptar("123"), "Masculino",nacimiento);
