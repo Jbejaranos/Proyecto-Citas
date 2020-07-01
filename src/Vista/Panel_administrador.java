@@ -37,6 +37,7 @@ public class Panel_administrador extends javax.swing.JPanel {
         Crear_medico = new javax.swing.JButton();
         consultBtn = new javax.swing.JButton();
         reporteFallasBtn = new javax.swing.JButton();
+        B_estadisticas = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(51, 102, 255));
 
@@ -46,7 +47,7 @@ public class Panel_administrador extends javax.swing.JPanel {
         Panel_variante.setLayout(Panel_varianteLayout);
         Panel_varianteLayout.setHorizontalGroup(
             Panel_varianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 799, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         Panel_varianteLayout.setVerticalGroup(
             Panel_varianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,6 +98,13 @@ public class Panel_administrador extends javax.swing.JPanel {
             }
         });
 
+        B_estadisticas.setText("Estadisticas");
+        B_estadisticas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_estadisticasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -114,7 +122,9 @@ public class Panel_administrador extends javax.swing.JPanel {
                 .addComponent(consultBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(reporteFallasBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(B_estadisticas)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,7 +136,8 @@ public class Panel_administrador extends javax.swing.JPanel {
                     .addComponent(jButton3)
                     .addComponent(Crear_medico)
                     .addComponent(consultBtn)
-                    .addComponent(reporteFallasBtn))
+                    .addComponent(reporteFallasBtn)
+                    .addComponent(B_estadisticas))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -137,9 +148,9 @@ public class Panel_administrador extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Panel_variante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Panel_variante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -225,8 +236,25 @@ public class Panel_administrador extends javax.swing.JPanel {
         Panel_variante.repaint();
     }//GEN-LAST:event_reporteFallasBtnActionPerformed
 
+    private void B_estadisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_estadisticasActionPerformed
+        // TODO add your handling code here:
+        
+        VentanaHome.controlSesion.restart();
+        Graficas RA = new Graficas();
+        RA.setSize(650, 450);
+        RA.setLocation(0, 0);
+        Panel_variante.removeAll();
+        Panel_variante.add(RA, BorderLayout.CENTER);
+        Panel_variante.revalidate();
+        Panel_variante.repaint();
+        
+        
+        
+    }//GEN-LAST:event_B_estadisticasActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton B_estadisticas;
     private javax.swing.JButton Crear_medico;
     private javax.swing.JPanel Panel_variante;
     private javax.swing.JButton consultBtn;
