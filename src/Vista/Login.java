@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Modelo.Administrador;
 import Modelo.Medico;
 import Modelo.Paciente;
 import Modelo.Sistema;
@@ -21,6 +22,7 @@ public class Login extends javax.swing.JPanel {
     Sistema system;
     public static Paciente pac;
     public static Medico med;
+    public static Administrador adm;
     
     /**
      * Creates new form Login
@@ -215,7 +217,26 @@ public class Login extends javax.swing.JPanel {
                 break;
 
             case "Administrador":
-
+                adm = Modelo.Sistema.encontrarAdministrador(Integer.valueOf(TFDocumento.getText()), VentanaHome.Sistema_principal);
+                
+                if(adm != null){
+                    if(Modelo.Encriptacion.desencriptar(adm.getPassword()).equals(entrada)){
+                        TFTest.setText("Autenticado");
+                        
+                        // Acceder seccion administrador
+                        Panel_administrador PA = new  Panel_administrador();
+                        PA.setSize(1000, 1000);
+                        PA.setLocation(0,0);
+                        Vista.VentanaHome.Panel_variante.removeAll();
+                        Vista.VentanaHome.Panel_variante.add(PA,BorderLayout.CENTER);
+                        Vista.VentanaHome.Panel_variante.revalidate();
+                        Vista.VentanaHome.Panel_variante.repaint();
+                    }else{
+                        TFTest.setText("Intente de nuevo");
+                    }
+                }else{
+                    TFTest.setText("Administrador inexistente");
+                }
                 break;
         }
         // TODO add your handling code here:
