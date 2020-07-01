@@ -194,7 +194,7 @@ public class Panel_administrador extends javax.swing.JPanel {
         // TODO add your handling code here:
         VentanaHome.controlSesion.restart();
         Consultorios CS = new Consultorios();
-        CS.setSize(1000, 1000);
+        CS.setSize(520, 341);
         CS.setLocation(0, 0);
         Panel_variante.removeAll();
         Panel_variante.add(CS, BorderLayout.CENTER);
