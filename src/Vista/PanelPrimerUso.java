@@ -83,7 +83,7 @@ public class PanelPrimerUso extends javax.swing.JPanel {
         descriptionTF.setColumns(10);
         descriptionTF.setLineWrap(true);
         descriptionTF.setRows(5);
-        descriptionTF.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet nisl in erat consequat feugiat. Nullam augue arcu, ullamcorper at blandit quis, condimentum sit amet mauris. Quisque enim dui, mollis ut sagittis facilisis, facilisis a purus. Nam a commodo felis. Fusce venenatis nec ipsum at efficitur. Fusce porta lacus vitae libero pretium, id dignissim magna luctus. Fusce auctor vel erat eu bibendum. Nunc ante nibh, accumsan eget auctor in, elementum et nibh. Curabitur non sollicitudin turpis.");
+        descriptionTF.setText("Bienvenido al sistema de agendamiento de citas médicas, a continuación podrá encontrar diferentes formularios en los cuales podrá ingresar información inicial sobre médicos, pacientes y la planta física de la entidad prestadora de salud. El sistema cuenta con diferentes funcionalidades que le permitirán como administrador la correcta gestión de la información usada en las diferentes sedes de la entidad.");
         descriptionTF.setAutoscrolls(false);
         jScrollPane1.setViewportView(descriptionTF);
 

@@ -88,7 +88,7 @@
             <Property name="columns" type="int" value="10"/>
             <Property name="lineWrap" type="boolean" value="true"/>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet nisl in erat consequat feugiat. Nullam augue arcu, ullamcorper at blandit quis, condimentum sit amet mauris. Quisque enim dui, mollis ut sagittis facilisis, facilisis a purus. Nam a commodo felis. Fusce venenatis nec ipsum at efficitur. Fusce porta lacus vitae libero pretium, id dignissim magna luctus. Fusce auctor vel erat eu bibendum. Nunc ante nibh, accumsan eget auctor in, elementum et nibh. Curabitur non sollicitudin turpis."/>
+            <Property name="text" type="java.lang.String" value="Bienvenido al sistema de agendamiento de citas m&#xe9;dicas, a continuaci&#xf3;n podr&#xe1; encontrar diferentes formularios en los cuales podr&#xe1; ingresar informaci&#xf3;n inicial sobre m&#xe9;dicos, pacientes y la planta f&#xed;sica de la entidad prestadora de salud. El sistema cuenta con diferentes funcionalidades que le permitir&#xe1;n como administrador la correcta gesti&#xf3;n de la informaci&#xf3;n usada en las diferentes sedes de la entidad."/>
             <Property name="autoscrolls" type="boolean" value="false"/>
           </Properties>
         </Component>

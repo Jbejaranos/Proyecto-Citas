@@ -21,6 +21,7 @@ public class Sistema {
     private ArrayList<HistoriaClinica> historiasClinicas;
     private ArrayList<Cita> citas;
     private ArrayList<Consultorio> consultorios;
+    private ArrayList<Falla> fallas;
     
     public Sistema(){
         medicos = new ArrayList<>();
@@ -29,6 +30,7 @@ public class Sistema {
         historiasClinicas = new ArrayList<>();
         citas = new ArrayList<>();
         consultorios = new ArrayList<>();
+        fallas = new ArrayList<>();
     }
 
     public ArrayList<Medico> getMedicos() {
@@ -77,6 +79,14 @@ public class Sistema {
 
     public void setConsultorios(ArrayList<Consultorio> consultorios) {
         this.consultorios = consultorios;
+    }
+
+    public ArrayList<Falla> getFallas() {
+        return fallas;
+    }
+
+    public void setFallas(ArrayList<Falla> fallas) {
+        this.fallas = fallas;
     }
     
     public void setPacienteNoAsiste(Cita cita, boolean estado){
