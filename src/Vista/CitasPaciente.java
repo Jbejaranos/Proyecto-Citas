@@ -5,8 +5,11 @@
  */
 package Vista;
 
+import Modelo.Cita;
 import Modelo.Paciente;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -28,7 +31,7 @@ public class CitasPaciente extends javax.swing.JPanel {
         //try{
             
         if(paciente != null && this.paciente.getCitasRegistradas().size()>0){
-            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            DefaultTableModel model = (DefaultTableModel) citasPaciente.getModel();
             for (int i = 0; i < this.paciente.getCitasRegistradas().size(); i++){
                 String fecha = getTextoFecha(this.paciente.getCitasRegistradas().get(i).getFecha());
                 String especialidad = this.paciente.getCitasRegistradas().get(i).getEspecialidad();
@@ -55,8 +58,7 @@ public class CitasPaciente extends javax.swing.JPanel {
 
         tituloPanel = new javax.swing.JLabel();
         tablaCitas = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        mensajeError = new javax.swing.JLabel();
+        citasPaciente = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         verDetallesB = new javax.swing.JButton();
         cancelarCitaB = new javax.swing.JButton();
@@ -65,7 +67,7 @@ public class CitasPaciente extends javax.swing.JPanel {
         tituloPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tituloPanel.setText("Citas Asignadas");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        citasPaciente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -73,9 +75,7 @@ public class CitasPaciente extends javax.swing.JPanel {
                 "Fecha", "Especialidad", "Médico", "Lugar"
             }
         ));
-        tablaCitas.setViewportView(jTable1);
-
-        mensajeError.setText("Pruebas");
+        tablaCitas.setViewportView(citasPaciente);
 
         verDetallesB.setText("Ver detalles");
         verDetallesB.addActionListener(new java.awt.event.ActionListener() {
@@ -119,22 +119,16 @@ public class CitasPaciente extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(136, 136, 136)
-                                .addComponent(tituloPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(tablaCitas, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 5, Short.MAX_VALUE))
+                        .addGap(136, 136, 136)
+                        .addComponent(tituloPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(mensajeError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap())
+                        .addContainerGap()
+                        .addComponent(tablaCitas, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(15, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,33 +139,43 @@ public class CitasPaciente extends javax.swing.JPanel {
                 .addComponent(tablaCitas, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(mensajeError)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void verDetallesBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verDetallesBActionPerformed
         // TODO add your handling code here:
         VentanaHome.controlSesion.restart();
+        int seleccion = citasPaciente.getSelectedRow();
+        if(seleccion != -1){
+            Cita cita = paciente.getCitasRegistradas().get(seleccion);
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+            String fecha = "Fecha: " + formato.format(cita.getFecha().getTime()) + "\n";
+            String medico = "Medico: " + cita.getMedico().getNombre() + "\n";
+            String especialidad = "Especialidad: " + cita.getEspecialidad() + "\n";
+            String consultorio = "Lugar: Consultorio " + cita.getConsultorio().getNumero() + ", sede " + cita.getConsultorio().getSede() + "\n";
+            JOptionPane.showMessageDialog(null, fecha + medico + especialidad + consultorio);
+        }else{
+            JOptionPane.showMessageDialog(null, "Por favor seleccione una cita");
+        }
     }//GEN-LAST:event_verDetallesBActionPerformed
 
     private void cancelarCitaBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarCitaBActionPerformed
         // TODO add your handling code here:
         VentanaHome.controlSesion.restart();
-        int seleccion = jTable1.getSelectedRow();
+        int seleccion = citasPaciente.getSelectedRow();
         if(seleccion != -1){
             boolean result = paciente.cancelarCita(paciente.getCitasRegistradas().get(seleccion).getFecha());
-            int modelIndex = jTable1.convertRowIndexToModel(seleccion);
-            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            int modelIndex = citasPaciente.convertRowIndexToModel(seleccion);
+            DefaultTableModel model = (DefaultTableModel) citasPaciente.getModel();
             model.removeRow(modelIndex);
             if(result){
-                mensajeError.setText("Cita cancelada");
+                JOptionPane.showMessageDialog(null, "Cita cancelada");
             }else{
-                mensajeError.setText("Error al cancelar la cita");
+                JOptionPane.showMessageDialog(null, "Error al cancelar la cita");
             }
         }else{
-            mensajeError.setText("Por favor seleccione una cita");
+            JOptionPane.showMessageDialog(null, "Por favor seleccione una cita");
         }
     }//GEN-LAST:event_cancelarCitaBActionPerformed
 
@@ -186,9 +190,8 @@ public class CitasPaciente extends javax.swing.JPanel {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelarCitaB;
+    private javax.swing.JTable citasPaciente;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JLabel mensajeError;
     private javax.swing.JScrollPane tablaCitas;
     private javax.swing.JLabel tituloPanel;
     private javax.swing.JButton verDetallesB;

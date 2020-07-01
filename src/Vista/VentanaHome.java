@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import DAO.AdministradorDAO;
+import Modelo.Administrador;
 import Modelo.Cita;
 import Modelo.Consultorio;
 import Modelo.Medico;
@@ -37,6 +39,7 @@ public class VentanaHome extends javax.swing.JFrame {
         
         Panel_desarrollo.setVisible(false);
         controlSesion.start();
+        protocoloPrimerUso();
     }
 
     /**
@@ -192,6 +195,29 @@ public class VentanaHome extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void protocoloPrimerUso(){
+        // Falta revisar en la base de datos con el método checkAdminsEmpty() en la clase DAO
+        if(Sistema_principal.getAdministradores().isEmpty()){
+            PanelPrimerUso primerUso = new PanelPrimerUso();
+            primerUso.setSize(1000, 1000);
+            primerUso.setLocation(0,0);
+            Panel_variante.removeAll();
+            Panel_variante.add(primerUso, BorderLayout.CENTER);
+            Panel_variante.revalidate();
+            Panel_variante.repaint();
+        }
+    }
+    
+    public static void logIn(){
+        Login PR = new  Login();
+        PR.setSize(1000, 1000);
+        PR.setLocation(0,0);
+        Panel_variante.removeAll();
+        Panel_variante.add(PR,BorderLayout.CENTER);
+        Panel_variante.revalidate();
+        Panel_variante.repaint();
+    }
+    
     private void crearUSUARIOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearUSUARIOActionPerformed
         // TODO add your handling code here:
         controlSesion.restart();
