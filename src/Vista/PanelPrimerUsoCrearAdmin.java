@@ -45,6 +45,7 @@ public class PanelPrimerUsoCrearAdmin extends javax.swing.JPanel {
         passwordTF = new javax.swing.JPasswordField();
         confirmarTF = new javax.swing.JPasswordField();
         generoComboBox = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 255));
 
@@ -79,6 +80,8 @@ public class PanelPrimerUsoCrearAdmin extends javax.swing.JPanel {
 
         generoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino", "Otro" }));
 
+        jLabel1.setText(" (DD/MM/AAAA)");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -86,6 +89,7 @@ public class PanelPrimerUsoCrearAdmin extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(163, 163, 163)
                         .addComponent(formTitle))
@@ -114,14 +118,14 @@ public class PanelPrimerUsoCrearAdmin extends javax.swing.JPanel {
                             .addComponent(idTF, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
                             .addComponent(passwordTF)
                             .addComponent(confirmarTF))))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(formTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addComponent(instructionsText)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -141,7 +145,9 @@ public class PanelPrimerUsoCrearAdmin extends javax.swing.JPanel {
                     .addComponent(confirmarLabel)
                     .addComponent(labelFecha)
                     .addComponent(confirmarTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addGap(15, 15, 15))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -215,6 +221,7 @@ public class PanelPrimerUsoCrearAdmin extends javax.swing.JPanel {
     private javax.swing.JLabel idLabel;
     private javax.swing.JTextField idTF;
     private javax.swing.JLabel instructionsText;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel labelFecha;
     private javax.swing.JLabel labelGenero;
     private javax.swing.JLabel labelNombre;
