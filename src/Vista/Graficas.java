@@ -6,6 +6,7 @@
 package Vista;
 
 import Modelo.Cita;
+import com.itextpdf.text.DocumentException;
 import java.util.ArrayList;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
@@ -13,11 +14,44 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PiePlot;
 import org.jfree.data.general.DefaultPieDataset;
 
+
+import java.io.FileOutputStream;
+
+import com.itextpdf.text.Document;
+
+import com.itextpdf.text.DocumentException;
+
+import com.itextpdf.text.Paragraph; 
+
+import com.itextpdf.text.pdf.PdfWriter; 
+
+ import java.io.*;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 /**
  *
  * @author Alejandro Ortiz
  */
 public class Graficas extends javax.swing.JPanel {
+    
+    
+    
+    
+    
+public void generarPDF(String texto)throws FileNotFoundException,DocumentException{
+
+Document document = new Document();
+//String dir = imprimir_horario((GregorianCalendar)Calendar.getInstance()) + ".pdf";
+
+PdfWriter.getInstance (document, new FileOutputStream("Informe.pdf"));
+
+document.open();
+
+document.add(new Paragraph (texto));
+
+document.close();
+}
+
 
     /**
      * Creates new form Graficas
@@ -32,6 +66,24 @@ public class Graficas extends javax.swing.JPanel {
     private ArrayList<Cita> citas;
     private ArrayList<Consultorio> consultorios;
     */
+    
+
+
+
+
+    public String imprimir_horario(GregorianCalendar horario){
+        int year = horario.get(Calendar.YEAR);
+        int mes = horario.get(Calendar.MONTH) + 1 ; 
+        int dia = horario.get(Calendar.DAY_OF_MONTH); 
+        int hora = horario.get(Calendar.HOUR_OF_DAY);
+        int minuto = horario.get(Calendar.MINUTE);
+        
+        return  "[ " + year + " / " + mes + " / " + dia + " - " + hora + " : " + minuto
+                //+ " / " + hora + " : " + minuto 
+                + " ]" ;
+    }
+    
+    
     
     public Graficas() {
         initComponents();
@@ -85,6 +137,19 @@ public class Graficas extends javax.swing.JPanel {
         
         TADatos.setText(estadisticas);
         TAIndicadores.setText(Indicadores);
+        
+        try{
+            generarPDF("Informe Sistema de atencion en Salud\n"
+                    + "Generado: "+ imprimir_horario((GregorianCalendar)Calendar.getInstance()) +"\n\n"
+                    + "\n\nEstadisticas del sistema\n\n" 
+                    + estadisticas
+                    + "\n\n\n\n\n"
+                    + "\nIndicadores del sistema\n\n\n"
+                    + Indicadores
+                    + "");
+        }catch(Exception e){
+            
+        }
     }
 
     /**
@@ -104,6 +169,7 @@ public class Graficas extends javax.swing.JPanel {
         TADatos = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         TAIndicadores = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 204, 255));
 
@@ -134,20 +200,25 @@ public class Graficas extends javax.swing.JPanel {
         TAIndicadores.setRows(5);
         jScrollPane2.setViewportView(TAIndicadores);
 
+        jLabel2.setText("En la carpeta del programa se ha guardadado el informe actualizado");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(mostrarPastel, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(CitasAgendadas, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(mostrarPastel, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE))
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(CitasAgendadas, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2))))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -155,7 +226,9 @@ public class Graficas extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1)
-                .addGap(29, 29, 29)
+                .addGap(6, 6, 6)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
                     .addComponent(jScrollPane1))
@@ -639,6 +712,7 @@ public class Graficas extends javax.swing.JPanel {
     private javax.swing.JTextArea TADatos;
     private javax.swing.JTextArea TAIndicadores;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
