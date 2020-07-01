@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Modelo.Encriptacion;
 import Modelo.Medico;
 import java.util.Calendar;
 import java.util.Date;
@@ -282,7 +283,7 @@ public class NuevoMedico extends javax.swing.JPanel {
             
             //add del paciente a la lista
             //Sistema system = new Sistema();
-            Medico medico_nuevo = new Medico(documento,nombre,clave, sexo, nacimiento,especialidad);
+            Medico medico_nuevo = new Medico(documento,nombre,Encriptacion.encriptar(clave), sexo, nacimiento,especialidad);
             
             Sistema.agregarMedico( medico_nuevo,Vista.VentanaHome.Sistema_principal);
             
