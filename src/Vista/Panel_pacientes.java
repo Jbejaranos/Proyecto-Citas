@@ -35,6 +35,7 @@ public class Panel_pacientes extends javax.swing.JPanel {
         registroCitaButton = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         B_mis_datos = new javax.swing.JButton();
+        Directorio = new javax.swing.JButton();
 
         Panel_variante.setBackground(new java.awt.Color(102, 153, 255));
 
@@ -61,31 +62,48 @@ public class Panel_pacientes extends javax.swing.JPanel {
             }
         });
 
+        Directorio.setText("Directorio");
+        Directorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DirectorioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout Panel_varianteLayout = new javax.swing.GroupLayout(Panel_variante);
         Panel_variante.setLayout(Panel_varianteLayout);
         Panel_varianteLayout.setHorizontalGroup(
             Panel_varianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Panel_varianteLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_varianteLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(B_citas, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addComponent(registroCitaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(42, 42, 42)
+                .addComponent(Directorio, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
                 .addComponent(B_mis_datos, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(Panel_varianteLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43))
         );
         Panel_varianteLayout.setVerticalGroup(
             Panel_varianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_varianteLayout.createSequentialGroup()
-                .addGap(156, 156, 156)
-                .addGroup(Panel_varianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(B_citas, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(registroCitaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(B_mis_datos, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(163, Short.MAX_VALUE))
+                .addGroup(Panel_varianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Panel_varianteLayout.createSequentialGroup()
+                        .addGap(156, 156, 156)
+                        .addGroup(Panel_varianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(B_citas, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(registroCitaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(B_mis_datos, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_varianteLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Directorio, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -142,10 +160,22 @@ public class Panel_pacientes extends javax.swing.JPanel {
         Panel_variante.repaint();
     }//GEN-LAST:event_B_mis_datosActionPerformed
 
+    private void DirectorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DirectorioActionPerformed
+        VentanaHome.controlSesion.restart();
+        DirectorioP DP = new DirectorioP();
+        DP.setSize(1000, 1000);
+        DP.setLocation(0,0);
+        Panel_variante.removeAll();
+        Panel_variante.add(DP ,BorderLayout.CENTER);
+        Panel_variante.revalidate();
+        Panel_variante.repaint();
+    }//GEN-LAST:event_DirectorioActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton B_citas;
     private javax.swing.JButton B_mis_datos;
+    private javax.swing.JButton Directorio;
     private javax.swing.JPanel Panel_variante;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton registroCitaButton;
