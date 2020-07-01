@@ -33,8 +33,9 @@ public class Panel_pacientes extends javax.swing.JPanel {
         Panel_variante = new javax.swing.JPanel();
         B_citas = new javax.swing.JButton();
         registroCitaButton = new javax.swing.JButton();
-        reportFallaBtn = new javax.swing.JButton();
         B_mis_datos = new javax.swing.JButton();
+        Directorio = new javax.swing.JButton();
+        registrarFallaBtn = new javax.swing.JButton();
 
         Panel_variante.setBackground(new java.awt.Color(102, 153, 255));
 
@@ -52,13 +53,6 @@ public class Panel_pacientes extends javax.swing.JPanel {
             }
         });
 
-        reportFallaBtn.setText("Reportar falla");
-        reportFallaBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reportFallaBtnActionPerformed(evt);
-            }
-        });
-
         B_mis_datos.setText("Mis datos");
         B_mis_datos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,31 +60,55 @@ public class Panel_pacientes extends javax.swing.JPanel {
             }
         });
 
+        Directorio.setText("Directorio");
+        Directorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DirectorioActionPerformed(evt);
+            }
+        });
+
+        registrarFallaBtn.setText("Registrar falla");
+        registrarFallaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registrarFallaBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout Panel_varianteLayout = new javax.swing.GroupLayout(Panel_variante);
         Panel_variante.setLayout(Panel_varianteLayout);
         Panel_varianteLayout.setHorizontalGroup(
             Panel_varianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Panel_varianteLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_varianteLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(B_citas, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(51, 51, 51)
                 .addComponent(registroCitaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
-                .addComponent(reportFallaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(42, 42, 42)
+                .addComponent(Directorio, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
                 .addComponent(B_mis_datos, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_varianteLayout.createSequentialGroup()
+                .addGap(238, 238, 238)
+                .addComponent(registrarFallaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(231, 231, 231))
         );
         Panel_varianteLayout.setVerticalGroup(
             Panel_varianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_varianteLayout.createSequentialGroup()
-                .addGap(156, 156, 156)
-                .addGroup(Panel_varianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(B_citas, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(registroCitaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(reportFallaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(B_mis_datos, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(163, Short.MAX_VALUE))
+                .addGroup(Panel_varianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Panel_varianteLayout.createSequentialGroup()
+                        .addGap(156, 156, 156)
+                        .addGroup(Panel_varianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(B_citas, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(registroCitaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(B_mis_datos, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_varianteLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Directorio, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(44, 44, 44)
+                .addComponent(registrarFallaBtn)
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -147,25 +165,36 @@ public class Panel_pacientes extends javax.swing.JPanel {
         Panel_variante.repaint();
     }//GEN-LAST:event_B_mis_datosActionPerformed
 
-    private void reportFallaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportFallaBtnActionPerformed
+    private void DirectorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DirectorioActionPerformed
+        VentanaHome.controlSesion.restart();
+        DirectorioP DP = new DirectorioP();
+        DP.setSize(1000, 1000);
+        DP.setLocation(0,0);
+        Panel_variante.removeAll();
+        Panel_variante.add(DP ,BorderLayout.CENTER);
+        Panel_variante.revalidate();
+        Panel_variante.repaint();
+    }//GEN-LAST:event_DirectorioActionPerformed
+
+    private void registrarFallaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarFallaBtnActionPerformed
         // TODO add your handling code here:
         VentanaHome.controlSesion.restart();
         ReportarFallaPaciente RF = new ReportarFallaPaciente();
-        RF.setSize(600, 600);
-        RF.setLocation(0, 0);
+        RF.setSize(1000, 1000);
+        RF.setLocation(0,0);
         RF.setParentPanel(this);
         Panel_variante.removeAll();
         Panel_variante.add(RF, BorderLayout.CENTER);
         Panel_variante.revalidate();
         Panel_variante.repaint();
-    }//GEN-LAST:event_reportFallaBtnActionPerformed
+    }//GEN-LAST:event_registrarFallaBtnActionPerformed
 
     public void reset(){
         Panel_variante.removeAll();
         Panel_variante.add(B_citas);
         Panel_variante.add(B_mis_datos);
+        Panel_variante.add(Directorio);
         Panel_variante.add(registroCitaButton);
-        Panel_variante.add(reportFallaBtn);
         Panel_variante.revalidate();
         Panel_variante.repaint();
     }
@@ -173,8 +202,9 @@ public class Panel_pacientes extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton B_citas;
     private javax.swing.JButton B_mis_datos;
+    private javax.swing.JButton Directorio;
     private javax.swing.JPanel Panel_variante;
+    private javax.swing.JButton registrarFallaBtn;
     private javax.swing.JButton registroCitaButton;
-    private javax.swing.JButton reportFallaBtn;
     // End of variables declaration//GEN-END:variables
 }
