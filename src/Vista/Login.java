@@ -22,6 +22,7 @@ public class Login extends javax.swing.JPanel {
     Sistema system;
     public static Paciente pac;
     public static Medico med;
+    static String sesion= "no atenticado";
     public static Administrador adm;
     
     /**
@@ -30,6 +31,11 @@ public class Login extends javax.swing.JPanel {
     public Login() {
         initComponents();
     }
+    
+    
+    
+    
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -171,7 +177,7 @@ public class Login extends javax.swing.JPanel {
                 if(pac != null){
                    if( Modelo.Encriptacion.desencriptar(pac.getPassword()).equals(entrada)){    //14 de junio se agrego encriptado ---------------[]
                        TFTest.setText("Autenticado");
-
+                        sesion = "paciente";
                         //Acceder seccion usuario
                         Panel_pacientes PR = new  Panel_pacientes();
                         PR.setSize(1000, 1000);
@@ -195,9 +201,9 @@ public class Login extends javax.swing.JPanel {
                 med = encontrarMedico(Integer.valueOf(TFDocumento.getText()),Vista.VentanaHome.Sistema_principal);
 
                 if(med != null){
-                   if(med.getPassword().equals(entrada)){
+                   if(Modelo.Encriptacion.desencriptar(med.getPassword()).equals(entrada)){
                        TFTest.setText("Autenticado");
-
+                        sesion = "medico";
                         //Acceder seccion usuario
                         PanelMedico PM = new  PanelMedico();
                         PM.setSize(1000, 1000);
@@ -222,7 +228,7 @@ public class Login extends javax.swing.JPanel {
                 if(adm != null){
                     if(Modelo.Encriptacion.desencriptar(adm.getPassword()).equals(entrada)){
                         TFTest.setText("Autenticado");
-                        
+                        sesion = "administrador";
                         // Acceder seccion administrador
                         Panel_administrador PA = new  Panel_administrador();
                         PA.setSize(1000, 1000);

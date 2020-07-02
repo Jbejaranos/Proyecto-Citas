@@ -35,8 +35,9 @@
                                   <Component id="nombreLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="fechaLabel" min="-2" max="-2" attributes="0"/>
                                   <Component id="especialidadLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="nombreTF" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
                                   <Component id="espComboBox" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
@@ -91,7 +92,9 @@
                   <Component id="passwordLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="passwordTF" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="37" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="17" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -197,6 +200,11 @@
       </AuxValues>
     </Component>
     <Component class="javax.swing.JPasswordField" name="passwordTF">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="DD/MM/AAAA"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

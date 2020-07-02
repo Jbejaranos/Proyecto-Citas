@@ -49,8 +49,8 @@ public class PanelPrimerUso extends javax.swing.JPanel {
         initComponents();
         descriptionTF.setEditable(false);
         
-        crearAdmin.setLocation(0, 0);
-        crearAdmin.setSize(586, 210);
+        crearAdmin.setLocation(2, 2);
+        crearAdmin.setSize(610, 220);
         panelVariante.add(crearAdmin);
         panelVariante.revalidate();
         panelVariante.repaint();
@@ -98,7 +98,7 @@ public class PanelPrimerUso extends javax.swing.JPanel {
         );
         panelVarianteLayout.setVerticalGroup(
             panelVarianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 215, Short.MAX_VALUE)
+            .addGap(0, 229, Short.MAX_VALUE)
         );
 
         previousBtn.setText("Anterior");
@@ -136,9 +136,9 @@ public class PanelPrimerUso extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(152, 152, 152)
                         .addComponent(previousBtn)
-                        .addGap(77, 77, 77)
+                        .addGap(78, 78, 78)
                         .addComponent(omitirBtn)
-                        .addGap(74, 74, 74)
+                        .addGap(73, 73, 73)
                         .addComponent(nextBtn))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(151, 151, 151)
@@ -157,9 +157,9 @@ public class PanelPrimerUso extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(previousBtn)
-                    .addComponent(nextBtn)
-                    .addComponent(omitirBtn))
-                .addContainerGap(21, Short.MAX_VALUE))
+                    .addComponent(omitirBtn)
+                    .addComponent(nextBtn))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -179,7 +179,7 @@ public class PanelPrimerUso extends javax.swing.JPanel {
                 int idAdmin = this.crearAdmin.getIdentificacion();
                 this.administrador.setIdentificacion(idAdmin);
 
-                String passwordAdmin = this.crearAdmin.getPassword();
+                String passwordAdmin = this.crearAdmin.getPasswordEncrypted();
                 this.administrador.setPassword(passwordAdmin);
                 break;
             case 1:
@@ -198,7 +198,7 @@ public class PanelPrimerUso extends javax.swing.JPanel {
                 int idMedico = this.crearMedico.getIdentificacion();
                 this.medico.setIdentificacion(idMedico);
 
-                String passwordMedico = this.crearMedico.getPassword();
+                String passwordMedico = this.crearMedico.getPasswordEncrypted();
                 this.medico.setPassword(passwordMedico);
                 break;
             case 2:
@@ -214,7 +214,7 @@ public class PanelPrimerUso extends javax.swing.JPanel {
                 int idPaciente = this.crearPaciente.getIdentificacion();
                 this.paciente.setIdentificacion(idPaciente);
                 
-                String passwordPaciente = this.crearPaciente.getPassword();
+                String passwordPaciente = this.crearPaciente.getPasswordEncrypted();
                 this.paciente.setPassword(passwordPaciente);
                 break;
             case 3:
@@ -231,7 +231,7 @@ public class PanelPrimerUso extends javax.swing.JPanel {
         switch(this.manejoVentanas){
             case 0:
                 crearAdmin.setLocation(2, 2);
-                crearAdmin.setSize(610, 208);
+                crearAdmin.setSize(610, 220);
                 panelVariante.removeAll();
                 panelVariante.add(crearAdmin);
                 panelVariante.revalidate();
@@ -241,7 +241,7 @@ public class PanelPrimerUso extends javax.swing.JPanel {
                 break;
             case 1:
                 crearMedico.setLocation(2, 2);
-                crearMedico.setSize(610, 208);
+                crearMedico.setSize(610, 220);
                 panelVariante.removeAll();
                 panelVariante.add(crearMedico);
                 panelVariante.revalidate();
@@ -249,7 +249,7 @@ public class PanelPrimerUso extends javax.swing.JPanel {
                 break;
             case 2:
                 crearPaciente.setLocation(2, 2);
-                crearPaciente.setSize(610, 208);
+                crearPaciente.setSize(610, 220);
                 panelVariante.removeAll();
                 panelVariante.add(crearPaciente);
                 panelVariante.revalidate();
@@ -269,7 +269,7 @@ public class PanelPrimerUso extends javax.swing.JPanel {
                 if(this.crearAdmin.confirmarInformacion()){
                     registrarInformacion(0);
                     crearMedico.setLocation(2, 2);
-                    crearMedico.setSize(610, 208);
+                    crearMedico.setSize(610, 220);
                     panelVariante.removeAll();
                     panelVariante.add(crearMedico);
                     panelVariante.revalidate();
@@ -285,7 +285,7 @@ public class PanelPrimerUso extends javax.swing.JPanel {
                 if(this.crearMedico.confirmarInformacion()){
                     registrarInformacion(1);
                     crearPaciente.setLocation(2, 2);
-                    crearPaciente.setSize(610, 208);
+                    crearPaciente.setSize(610, 220);
                     panelVariante.removeAll();
                     panelVariante.add(crearPaciente);
                     panelVariante.revalidate();
@@ -299,7 +299,7 @@ public class PanelPrimerUso extends javax.swing.JPanel {
                 if(this.crearPaciente.confirmarInformacion()){
                     registrarInformacion(2);
                     plantaFisica.setLocation(2, 2);
-                    plantaFisica.setSize(610, 208);
+                    plantaFisica.setSize(610, 220);
                     panelVariante.removeAll();
                     panelVariante.add(plantaFisica);
                     panelVariante.revalidate();
@@ -311,11 +311,15 @@ public class PanelPrimerUso extends javax.swing.JPanel {
                 }
                 break;
             case 4:
+                VentanaHome.Sistema_principal.getAdministradores().add(administrador);
                 if(this.plantaFisica.comprobarInformacion()){
                     registrarInformacion(3);
-                    VentanaHome.Sistema_principal.getAdministradores().add(administrador);
-                    VentanaHome.Sistema_principal.getMedicos().add(medico);
-                    VentanaHome.Sistema_principal.getPacientes().add(paciente);
+                    if(this.medico.getIdentificacion() != -1){
+                        VentanaHome.Sistema_principal.getMedicos().add(medico);
+                    }
+                    if(this.paciente.getIdentificacion() != -1){
+                        VentanaHome.Sistema_principal.getPacientes().add(paciente);
+                    }
                     for(Consultorio c: this.consultorios){
                         VentanaHome.Sistema_principal.getConsultorios().add(c);
                     }
@@ -336,7 +340,7 @@ public class PanelPrimerUso extends javax.swing.JPanel {
         switch(this.manejoVentanas){
             case 2:
                 crearPaciente.setLocation(2, 2);
-                crearPaciente.setSize(610, 208);
+                crearPaciente.setSize(610, 220);
                 panelVariante.removeAll();
                 panelVariante.add(crearPaciente);
                 panelVariante.revalidate();
@@ -344,7 +348,7 @@ public class PanelPrimerUso extends javax.swing.JPanel {
                 break;
             case 3:
                 plantaFisica.setLocation(2, 2);
-                plantaFisica.setSize(610, 208);
+                plantaFisica.setSize(610, 220);
                 panelVariante.removeAll();
                 panelVariante.add(plantaFisica);
                 panelVariante.revalidate();
@@ -352,14 +356,12 @@ public class PanelPrimerUso extends javax.swing.JPanel {
                 nextBtn.setText("Finalizar");
                 break;
             case 4:
-                if(this.administrador.getIdentificacion() != -1 && this.medico.getIdentificacion() != -1
-                        && this.paciente.getIdentificacion() != -1 && !this.consultorios.isEmpty()){
-                    VentanaHome.Sistema_principal.getAdministradores().add(administrador);
+                VentanaHome.Sistema_principal.getAdministradores().add(administrador);
+                if(this.medico.getIdentificacion() != -1){
                     VentanaHome.Sistema_principal.getMedicos().add(medico);
+                }
+                if(this.paciente.getIdentificacion() != -1){
                     VentanaHome.Sistema_principal.getPacientes().add(paciente);
-                    for(Consultorio c: this.consultorios){
-                        VentanaHome.Sistema_principal.getConsultorios().add(c);
-                    }
                 }
                 VentanaHome.logIn();
                 break;

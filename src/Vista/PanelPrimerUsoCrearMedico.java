@@ -45,6 +45,7 @@ public class PanelPrimerUsoCrearMedico extends javax.swing.JPanel {
         idTF = new javax.swing.JTextField();
         generoComboBox = new javax.swing.JComboBox<>();
         passwordTF = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 255));
 
@@ -69,6 +70,8 @@ public class PanelPrimerUsoCrearMedico extends javax.swing.JPanel {
 
         generoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino", "Otro" }));
 
+        jLabel1.setText("DD/MM/AAAA");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -85,8 +88,9 @@ public class PanelPrimerUsoCrearMedico extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(nombreLabel)
                                     .addComponent(fechaLabel)
-                                    .addComponent(especialidadLabel))
-                                .addGap(30, 30, 30)
+                                    .addComponent(especialidadLabel)
+                                    .addComponent(jLabel1))
+                                .addGap(31, 31, 31)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(nombreTF, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(espComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -129,7 +133,9 @@ public class PanelPrimerUsoCrearMedico extends javax.swing.JPanel {
                     .addComponent(fechaLabel)
                     .addComponent(passwordLabel)
                     .addComponent(passwordTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -169,6 +175,10 @@ public class PanelPrimerUsoCrearMedico extends javax.swing.JPanel {
         return password;
     }
     
+    public String getPasswordEncrypted(){
+        return Modelo.Encriptacion.encriptar(getPassword());
+    }
+    
     public boolean confirmarInformacion(){
         boolean nombreIsCorrect = !this.nombreTF.getText().isEmpty();
         String genero = (String) this.generoComboBox.getSelectedItem();
@@ -189,6 +199,7 @@ public class PanelPrimerUsoCrearMedico extends javax.swing.JPanel {
     private javax.swing.JLabel idLabel;
     private javax.swing.JTextField idTF;
     private javax.swing.JLabel intruccionesLabel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel nombreLabel;
     private javax.swing.JTextField nombreTF;

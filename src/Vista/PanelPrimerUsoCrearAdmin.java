@@ -70,6 +70,7 @@ public class PanelPrimerUsoCrearAdmin extends javax.swing.JPanel {
             }
         });
 
+        fechaTF.setToolTipText("");
         fechaTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fechaTFActionPerformed(evt);
@@ -80,7 +81,7 @@ public class PanelPrimerUsoCrearAdmin extends javax.swing.JPanel {
 
         generoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino", "Otro" }));
 
-        jLabel1.setText(" (DD/MM/AAAA)");
+        jLabel1.setText("DD/MM/AAAA");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -125,7 +126,7 @@ public class PanelPrimerUsoCrearAdmin extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(formTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addGap(14, 14, 14)
                 .addComponent(instructionsText)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -147,7 +148,7 @@ public class PanelPrimerUsoCrearAdmin extends javax.swing.JPanel {
                     .addComponent(confirmarTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addGap(15, 15, 15))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -189,6 +190,10 @@ public class PanelPrimerUsoCrearAdmin extends javax.swing.JPanel {
         for(char c: this.passwordTF.getPassword())
             password += c;
         return password;
+    }
+    
+    public String getPasswordEncrypted(){
+        return Modelo.Encriptacion.encriptar(getPassword());
     }
     
     public String getConfirmarPassword(){

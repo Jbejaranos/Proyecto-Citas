@@ -44,6 +44,7 @@ public class PanelPrimerUsoCrearPaciente extends javax.swing.JPanel {
         idTF = new javax.swing.JTextField();
         confirmarTF = new javax.swing.JPasswordField();
         passwordTF = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 255));
 
@@ -66,6 +67,8 @@ public class PanelPrimerUsoCrearPaciente extends javax.swing.JPanel {
 
         confirmarLabel.setText("Confirmar contraseña");
 
+        jLabel1.setText("DD/MM/AAAA");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -77,6 +80,7 @@ public class PanelPrimerUsoCrearPaciente extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nombreLabel)
@@ -125,7 +129,9 @@ public class PanelPrimerUsoCrearPaciente extends javax.swing.JPanel {
                     .addComponent(fechaLabel)
                     .addComponent(confirmarLabel)
                     .addComponent(confirmarTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addGap(6, 6, 6)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -161,6 +167,10 @@ public class PanelPrimerUsoCrearPaciente extends javax.swing.JPanel {
         return password;
     }
     
+    public String getPasswordEncrypted(){
+        return Modelo.Encriptacion.encriptar(getPassword());
+    }
+    
     public String getConfirmarPassword(){
         String confirmar = "";
         for(char c: this.confirmarTF.getPassword())
@@ -191,6 +201,7 @@ public class PanelPrimerUsoCrearPaciente extends javax.swing.JPanel {
     private javax.swing.JLabel idLabel;
     private javax.swing.JTextField idTF;
     private javax.swing.JLabel instrLabel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel nombreLabel;
     private javax.swing.JTextField nombreTF;
     private javax.swing.JLabel panelLabel;

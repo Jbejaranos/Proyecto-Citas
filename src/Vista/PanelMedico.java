@@ -32,6 +32,7 @@ public class PanelMedico extends javax.swing.JPanel {
         panelVariante = new javax.swing.JPanel();
         BTHorario = new javax.swing.JButton();
         B_mis_datos = new javax.swing.JButton();
+        mensajesBtn = new javax.swing.JButton();
 
         panelVariante.setBackground(new java.awt.Color(255, 204, 255));
 
@@ -49,6 +50,13 @@ public class PanelMedico extends javax.swing.JPanel {
             }
         });
 
+        mensajesBtn.setText("Mensajes");
+        mensajesBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mensajesBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelVarianteLayout = new javax.swing.GroupLayout(panelVariante);
         panelVariante.setLayout(panelVarianteLayout);
         panelVarianteLayout.setHorizontalGroup(
@@ -58,7 +66,9 @@ public class PanelMedico extends javax.swing.JPanel {
                 .addComponent(B_mis_datos)
                 .addGap(39, 39, 39)
                 .addComponent(BTHorario)
-                .addContainerGap(536, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addComponent(mensajesBtn)
+                .addContainerGap(427, Short.MAX_VALUE))
         );
         panelVarianteLayout.setVerticalGroup(
             panelVarianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -66,7 +76,8 @@ public class PanelMedico extends javax.swing.JPanel {
                 .addGap(189, 189, 189)
                 .addGroup(panelVarianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(B_mis_datos)
-                    .addComponent(BTHorario))
+                    .addComponent(BTHorario)
+                    .addComponent(mensajesBtn))
                 .addContainerGap(242, Short.MAX_VALUE))
         );
 
@@ -77,7 +88,7 @@ public class PanelMedico extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(panelVariante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,10 +123,23 @@ public class PanelMedico extends javax.swing.JPanel {
         panelVariante.repaint();
     }//GEN-LAST:event_B_mis_datosActionPerformed
 
+    private void mensajesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mensajesBtnActionPerformed
+        // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
+        CanalContactoMedico CM = new CanalContactoMedico();
+        CM.setSize(650, 485);
+        CM.setLocation(0,0);
+        panelVariante.removeAll();
+        panelVariante.add(CM ,BorderLayout.CENTER);
+        panelVariante.revalidate();
+        panelVariante.repaint();
+    }//GEN-LAST:event_mensajesBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BTHorario;
     private javax.swing.JButton B_mis_datos;
+    private javax.swing.JButton mensajesBtn;
     private javax.swing.JPanel panelVariante;
     // End of variables declaration//GEN-END:variables
 }

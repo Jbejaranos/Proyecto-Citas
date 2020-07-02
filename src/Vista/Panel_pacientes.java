@@ -195,6 +195,7 @@ public class Panel_pacientes extends javax.swing.JPanel {
         Panel_variante.add(B_mis_datos);
         Panel_variante.add(Directorio);
         Panel_variante.add(registroCitaButton);
+        Panel_variante.add(registrarFallaBtn);
         Panel_variante.revalidate();
         Panel_variante.repaint();
     }

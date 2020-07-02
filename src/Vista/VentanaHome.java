@@ -9,10 +9,16 @@ import DAO.AdministradorDAO;
 import Modelo.Administrador;
 import Modelo.Cita;
 import Modelo.Consultorio;
+import static Modelo.Encriptacion.encriptar;
 import Modelo.Medico;
+import Modelo.Paciente;
 import Modelo.Sistema;
+import static Vista.Login.sesion;
+import static Vista.NuevoUsuario.crear_horario;
+import static Vista.TestScript.nacimiento;
 import java.awt.BorderLayout;
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 
 /**
  *
@@ -27,6 +33,52 @@ public class VentanaHome extends javax.swing.JFrame {
     public static Sistema Sistema_principal = new Sistema();
     public static ControlSesion controlSesion = ControlSesion.getControlSesion();
     
+    
+    
+    
+        public void BotonInicio(){
+        
+        switch(sesion){
+            case "paciente":
+                //Acceder seccion usuario
+                        Panel_pacientes PR = new  Panel_pacientes();
+                        PR.setSize(1000, 1000);
+                        PR.setLocation(0,0);
+                        Vista.VentanaHome.Panel_variante.removeAll();
+                        Vista.VentanaHome.Panel_variante.add(PR,BorderLayout.CENTER);
+                        Vista.VentanaHome.Panel_variante.revalidate();
+                        Vista.VentanaHome.Panel_variante.repaint();
+            break;
+            
+            case"medico":
+                //Acceder seccion usuario
+                        PanelMedico PM = new  PanelMedico();
+                        PM.setSize(1000, 1000);
+                        PM.setLocation(0,0);
+                        Vista.VentanaHome.Panel_variante.removeAll();
+                        Vista.VentanaHome.Panel_variante.add(PM,BorderLayout.CENTER);
+                        Vista.VentanaHome.Panel_variante.revalidate();
+                        Vista.VentanaHome.Panel_variante.repaint();
+                
+            break;
+            
+            case "administrador":
+                // Acceder seccion administrador
+                        Panel_administrador PA = new Panel_administrador();
+                        PA.setSize(1000, 1000);
+                        PA.setLocation(0,0);
+                        Vista.VentanaHome.Panel_variante.removeAll();
+                        Vista.VentanaHome.Panel_variante.add(PA,BorderLayout.CENTER);
+                        Vista.VentanaHome.Panel_variante.revalidate();
+                        Vista.VentanaHome.Panel_variante.repaint();
+            
+            default:
+                
+            break;
+        }
+    }
+        
+    
     public VentanaHome() {
         initComponents();
         Login PR = new  Login();
@@ -40,6 +92,124 @@ public class VentanaHome extends javax.swing.JFrame {
         Panel_desarrollo.setVisible(false);
         controlSesion.start();
         protocoloPrimerUso();
+        
+        
+        
+        
+        
+        
+         
+        
+        //--------------------------------------------------------------------------------------------------------------
+        
+        
+     GregorianCalendar nacimiento = crear_horario(2000,7,5,0,0);
+     GregorianCalendar fechacita = crear_horario(2020,8,10,7,0);
+     
+        String[] especialidades = {   //24 max index
+        
+            "General",
+            "Alergología",
+            "Anestesiología",
+            "Cardiología",
+            "Gastroenterología",
+            "Endocrinología",
+            "Epidemiología",
+            "Geriatría",
+            "Hepatología",
+            "Hematología",
+            "Infectología",
+            "Medicina familiar y comunitaria",
+            "Medicina física y rehabilitación",
+            "Medicina intensiva",
+            "Medicina interna",
+            "Medicina preventiva y salud pública",
+            "Nefrología",
+            "Neumología",
+            "Neurología",
+            "Nutriología",
+            "Oncología",
+            "Pediatría",
+            "Psiquiatría",
+            "Reumatología",
+            "Toxicología" 
+        };
+                
+                
+        for(long i = 0;i<100;i++){
+            Medico med = new Medico(i, "med"+i, encriptar("123"), "Femenino",nacimiento, "General");
+            Sistema_principal.getMedicos().add(med);
+         
+            Consultorio con = new Consultorio( (int)i, "Consultorio "+i , "Sede Norte");
+            Sistema_principal.getConsultorios().add(con);
+            
+            Paciente pac = new Paciente(i, "pac"+ i, encriptar("123"), "Masculino",nacimiento);
+            Sistema_principal.getPacientes().add(pac);
+        
+            Cita cita = new Cita(fechacita, pac, med,con, "General");
+            Sistema_principal.getCitas().add(cita);
+            
+            pac.addCita(cita);
+            med.addCitaMd(cita);
+            
+        }
+        
+        
+        
+        for(long i = 100;i<115;i++){
+            
+        
+        
+        
+        Medico med = new Medico(i, "med"+i, encriptar("123"), "Femenino",nacimiento, especialidades[(int)i%14]);
+        Sistema_principal.getMedicos().add(med);
+        
+        Consultorio con = new Consultorio( (int)i, "Consultorio "+i , "Sede Norte");
+        Sistema_principal.getConsultorios().add(con);
+        
+        Paciente pac = new Paciente(i, "pac"+ i, encriptar("123"), "Masculino",nacimiento);
+        Sistema_principal.getPacientes().add(pac);
+        
+        Cita cita = new Cita(fechacita, pac, med,con, especialidades [(int)i%14]);
+        Sistema_principal.getCitas().add(cita);
+        
+            pac.addCita(cita);
+            med.addCitaMd(cita);
+        }
+        
+        
+        
+        
+        
+        
+        for(long i = 115;i<160;i++){
+            
+        
+        
+        
+        Medico med = new Medico(i, "med"+i, encriptar("123"), "Femenino",nacimiento, especialidades[(int)i%14]);
+        Sistema_principal.getMedicos().add(med);
+        
+        Consultorio con = new Consultorio( (int)i, "Consultorio "+i , "Sede Norte");
+        Sistema_principal.getConsultorios().add(con);
+        
+        Paciente pac = new Paciente(i, "pac"+ i, encriptar("123"), "Masculino",nacimiento);
+        Sistema_principal.getPacientes().add(pac);
+        
+        Cita cita = new Cita(fechacita, null, med,con, especialidades [(int)i%20]);
+        Sistema_principal.getCitas().add(cita);
+        }
+        
+        
+        
+        
+        for(long i = 160;i<500;i++){
+            
+
+        Paciente pac = new Paciente(i, "pac"+ i, encriptar("123"), "Masculino",nacimiento);
+        Sistema_principal.getPacientes().add(pac);
+        }
+        //-----------------------------------------------------------------------------------------------------------------
     }
 
     /**
@@ -60,6 +230,7 @@ public class VentanaHome extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         Admin = new javax.swing.JButton();
         Iniciar_una_sesion = new javax.swing.JButton();
+        BotonIrHome = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 153));
@@ -68,11 +239,11 @@ public class VentanaHome extends javax.swing.JFrame {
         Panel_variante.setLayout(Panel_varianteLayout);
         Panel_varianteLayout.setHorizontalGroup(
             Panel_varianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 750, Short.MAX_VALUE)
+            .addGap(0, 955, Short.MAX_VALUE)
         );
         Panel_varianteLayout.setVerticalGroup(
             Panel_varianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 478, Short.MAX_VALUE)
+            .addGap(0, 538, Short.MAX_VALUE)
         );
 
         crearUSUARIO.setText("Agregar");
@@ -127,7 +298,7 @@ public class VentanaHome extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(paciente)
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Admin.setText("Soy admin");
@@ -165,6 +336,13 @@ public class VentanaHome extends javax.swing.JFrame {
                 .addContainerGap(46, Short.MAX_VALUE))
         );
 
+        BotonIrHome.setText("SystemSalud");
+        BotonIrHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonIrHomeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -173,9 +351,13 @@ public class VentanaHome extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(Panel_variante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Panel_desarrollo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(Panel_desarrollo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(BotonIrHome)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -187,7 +369,9 @@ public class VentanaHome extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(64, 64, 64)
                 .addComponent(Panel_desarrollo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(BotonIrHome, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -292,6 +476,12 @@ public class VentanaHome extends javax.swing.JFrame {
         
     }//GEN-LAST:event_Iniciar_una_sesionActionPerformed
 
+    private void BotonIrHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonIrHomeActionPerformed
+        // TODO add your handling code here:
+        
+        BotonInicio();
+    }//GEN-LAST:event_BotonIrHomeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -329,6 +519,7 @@ public class VentanaHome extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Admin;
+    private javax.swing.JButton BotonIrHome;
     private javax.swing.JButton Iniciar_una_sesion;
     private javax.swing.JButton Ir_login;
     private javax.swing.JPanel Panel_desarrollo;
