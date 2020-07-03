@@ -67,7 +67,7 @@ public class TestScript {
         for(long i = 0;i<100;i++){
             Medico med = new Medico(i, "med"+i, "123", "Femenino",nacimiento, "General");
             Consultorio con = new Consultorio( (int)i, "Consultorio "+i , "Sede Norte");
-            Paciente pac = new Paciente(i, "pac"+ i, "123", "Masculino",nacimiento);
+            Paciente pac = new Paciente(i, "pac"+ i, "123", "Masculino",nacimiento,null);
         
         
             Cita cita = new Cita(fechacita, pac, med,con, "General");
@@ -82,7 +82,7 @@ public class TestScript {
         
         Medico med = new Medico(i, "med"+i, "123", "Femenino",nacimiento, especialidades[(int)i%14]);
         Consultorio con = new Consultorio( (int)i, "Consultorio "+i , "Sede Norte");
-        Paciente pac = new Paciente(i, "pac"+ i, "123", "Masculino",nacimiento);
+        Paciente pac = new Paciente(i, "pac"+ i, "123", "Masculino",nacimiento,null);
         
         
         Cita cita = new Cita(fechacita, pac, med,con, especialidades [(int)i%14]);

@@ -33,10 +33,12 @@ public class PanelMedico extends javax.swing.JPanel {
         BTHorario = new javax.swing.JButton();
         B_mis_datos = new javax.swing.JButton();
         mensajesBtn = new javax.swing.JButton();
+        historiaClinicaBtn = new javax.swing.JButton();
 
         panelVariante.setBackground(new java.awt.Color(255, 204, 255));
 
         BTHorario.setText("Horario");
+        BTHorario.setPreferredSize(new java.awt.Dimension(110, 110));
         BTHorario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BTHorarioActionPerformed(evt);
@@ -44,6 +46,7 @@ public class PanelMedico extends javax.swing.JPanel {
         });
 
         B_mis_datos.setText("Mis datos");
+        B_mis_datos.setPreferredSize(new java.awt.Dimension(110, 110));
         B_mis_datos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 B_mis_datosActionPerformed(evt);
@@ -51,9 +54,18 @@ public class PanelMedico extends javax.swing.JPanel {
         });
 
         mensajesBtn.setText("Mensajes");
+        mensajesBtn.setPreferredSize(new java.awt.Dimension(110, 110));
         mensajesBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mensajesBtnActionPerformed(evt);
+            }
+        });
+
+        historiaClinicaBtn.setText("Historia Clinica");
+        historiaClinicaBtn.setPreferredSize(new java.awt.Dimension(110, 110));
+        historiaClinicaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                historiaClinicaBtnActionPerformed(evt);
             }
         });
 
@@ -62,23 +74,26 @@ public class PanelMedico extends javax.swing.JPanel {
         panelVarianteLayout.setHorizontalGroup(
             panelVarianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelVarianteLayout.createSequentialGroup()
-                .addGap(286, 286, 286)
-                .addComponent(B_mis_datos)
-                .addGap(39, 39, 39)
-                .addComponent(BTHorario)
-                .addGap(34, 34, 34)
-                .addComponent(mensajesBtn)
-                .addContainerGap(427, Short.MAX_VALUE))
+                .addGap(189, 189, 189)
+                .addComponent(B_mis_datos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BTHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(mensajesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(historiaClinicaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(246, Short.MAX_VALUE))
         );
         panelVarianteLayout.setVerticalGroup(
             panelVarianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelVarianteLayout.createSequentialGroup()
-                .addGap(189, 189, 189)
+                .addGap(158, 158, 158)
                 .addGroup(panelVarianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(B_mis_datos)
-                    .addComponent(BTHorario)
-                    .addComponent(mensajesBtn))
-                .addContainerGap(242, Short.MAX_VALUE))
+                    .addComponent(B_mis_datos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BTHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mensajesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(historiaClinicaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(217, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -87,15 +102,15 @@ public class PanelMedico extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(panelVariante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addComponent(panelVariante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(panelVariante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -135,10 +150,23 @@ public class PanelMedico extends javax.swing.JPanel {
         panelVariante.repaint();
     }//GEN-LAST:event_mensajesBtnActionPerformed
 
+    private void historiaClinicaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historiaClinicaBtnActionPerformed
+        // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
+        historiaClinicaMedico PR = new  historiaClinicaMedico();
+        PR.setSize(1000, 1000);
+        PR.setLocation(0,0);
+        panelVariante.removeAll();
+        panelVariante.add(PR,BorderLayout.CENTER);
+        panelVariante.revalidate();
+        panelVariante.repaint(); 
+    }//GEN-LAST:event_historiaClinicaBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BTHorario;
     private javax.swing.JButton B_mis_datos;
+    private javax.swing.JButton historiaClinicaBtn;
     private javax.swing.JButton mensajesBtn;
     private javax.swing.JPanel panelVariante;
     // End of variables declaration//GEN-END:variables

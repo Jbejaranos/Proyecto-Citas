@@ -30,6 +30,13 @@ public class Paciente extends Persona {
         this.citasRegistradas = new ArrayList<Cita>();
     }
 
+    public Paciente(long identificacion, String nombre, String password, String genero, Calendar fechaNacimiento, HistoriaClinica hist) {
+        super(identificacion, nombre, password, genero, fechaNacimiento);
+        this.sanciones = 0;
+        this.citasRegistradas = new ArrayList<Cita>();
+        this.historiaClinica = hist;
+    }
+    
     public ArrayList<Cita> getCitasRegistradas() {
         return citasRegistradas;
     }

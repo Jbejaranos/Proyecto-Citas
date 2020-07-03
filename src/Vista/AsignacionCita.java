@@ -254,7 +254,7 @@ public class AsignacionCita extends javax.swing.JPanel {
      
     if (bfiltro.getSelection()==null) {
         evt.consume();
-        JOptionPane.showMessageDialog(this, "seleccione una opción del filtro", "Menaje de Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, "seleccione una opción del filtro", "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
     } else {
         BuscarParametro.addKeyListener(new KeyAdapter() {
             @Override
