@@ -33,9 +33,10 @@ public class Panel_pacientes extends javax.swing.JPanel {
         Panel_variante = new javax.swing.JPanel();
         B_citas = new javax.swing.JButton();
         registroCitaButton = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         B_mis_datos = new javax.swing.JButton();
         Directorio = new javax.swing.JButton();
+        registrarFallaBtn = new javax.swing.JButton();
+        historiaClinicaBtn = new javax.swing.JButton();
 
         Panel_variante.setBackground(new java.awt.Color(102, 153, 255));
 
@@ -53,8 +54,6 @@ public class Panel_pacientes extends javax.swing.JPanel {
             }
         });
 
-        jButton3.setText("B");
-
         B_mis_datos.setText("Mis datos");
         B_mis_datos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,24 +68,39 @@ public class Panel_pacientes extends javax.swing.JPanel {
             }
         });
 
+        registrarFallaBtn.setText("Registrar falla");
+        registrarFallaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registrarFallaBtnActionPerformed(evt);
+            }
+        });
+
+        historiaClinicaBtn.setText("Historia Clinica");
+        historiaClinicaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                historiaClinicaBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout Panel_varianteLayout = new javax.swing.GroupLayout(Panel_variante);
         Panel_variante.setLayout(Panel_varianteLayout);
         Panel_varianteLayout.setHorizontalGroup(
             Panel_varianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_varianteLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(B_citas, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(registroCitaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(B_mis_datos, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
             .addGroup(Panel_varianteLayout.createSequentialGroup()
-                .addGap(443, 443, 443)
-                .addComponent(Directorio, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addGap(46, 46, 46)
+                .addGroup(Panel_varianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(registrarFallaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(Panel_varianteLayout.createSequentialGroup()
+                        .addComponent(B_citas, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(registroCitaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Directorio, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(B_mis_datos, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(historiaClinicaBtn)
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         Panel_varianteLayout.setVerticalGroup(
             Panel_varianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,11 +109,12 @@ public class Panel_pacientes extends javax.swing.JPanel {
                 .addGroup(Panel_varianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(B_citas, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(registroCitaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(B_mis_datos, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(Directorio, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                    .addComponent(B_mis_datos, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Directorio, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(historiaClinicaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addComponent(registrarFallaBtn)
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -167,13 +182,48 @@ public class Panel_pacientes extends javax.swing.JPanel {
         Panel_variante.repaint();
     }//GEN-LAST:event_DirectorioActionPerformed
 
+    private void registrarFallaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarFallaBtnActionPerformed
+        // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
+        ReportarFallaPaciente RF = new ReportarFallaPaciente();
+        RF.setSize(1000, 1000);
+        RF.setLocation(0,0);
+        RF.setParentPanel(this);
+        Panel_variante.removeAll();
+        Panel_variante.add(RF, BorderLayout.CENTER);
+        Panel_variante.revalidate();
+        Panel_variante.repaint();
+    }//GEN-LAST:event_registrarFallaBtnActionPerformed
+
+    private void historiaClinicaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historiaClinicaBtnActionPerformed
+        VentanaHome.controlSesion.restart();
+        historiaClinicaPaciente DP = new historiaClinicaPaciente();
+        DP.setSize(1000, 1000);
+        DP.setLocation(0,0);
+        Panel_variante.removeAll();
+        Panel_variante.add(DP ,BorderLayout.CENTER);
+        Panel_variante.revalidate();
+        Panel_variante.repaint();
+    }//GEN-LAST:event_historiaClinicaBtnActionPerformed
+
+    public void reset(){
+        Panel_variante.removeAll();
+        Panel_variante.add(B_citas);
+        Panel_variante.add(B_mis_datos);
+        Panel_variante.add(Directorio);
+        Panel_variante.add(registroCitaButton);
+        Panel_variante.add(registrarFallaBtn);
+        Panel_variante.revalidate();
+        Panel_variante.repaint();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton B_citas;
     private javax.swing.JButton B_mis_datos;
     private javax.swing.JButton Directorio;
     private javax.swing.JPanel Panel_variante;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton historiaClinicaBtn;
+    private javax.swing.JButton registrarFallaBtn;
     private javax.swing.JButton registroCitaButton;
     // End of variables declaration//GEN-END:variables
 }

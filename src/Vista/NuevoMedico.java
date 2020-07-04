@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Modelo.Encriptacion;
 import Modelo.Medico;
 import java.util.Calendar;
 import java.util.Date;
@@ -133,6 +134,11 @@ public class NuevoMedico extends javax.swing.JPanel {
 
         CB_especialidad.setBackground(new java.awt.Color(0, 153, 255));
         CB_especialidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "General", "Alergología", "Anestesiología", "Cardiología", "Gastroenterología", "Endocrinología", "Epidemiología", "Geriatría", "Hepatología", "Hematología", "Infectología", "Medicina familiar y comunitaria", "Medicina física y rehabilitación", "Medicina intensiva", "Medicina interna", "Medicina preventiva y salud pública", "Nefrología", "Neumología", "Neurología", "Nutriología", "Oncología", "Pediatría", "Psiquiatría", "Reumatología", "Toxicología" }));
+        CB_especialidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CB_especialidadActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("Especialidad");
 
@@ -277,7 +283,7 @@ public class NuevoMedico extends javax.swing.JPanel {
             
             //add del paciente a la lista
             //Sistema system = new Sistema();
-            Medico medico_nuevo = new Medico(documento,nombre,clave, sexo, nacimiento,especialidad);
+            Medico medico_nuevo = new Medico(documento,nombre,Encriptacion.encriptar(clave), sexo, nacimiento,especialidad);
             
             Sistema.agregarMedico( medico_nuevo,Vista.VentanaHome.Sistema_principal);
             
@@ -302,6 +308,10 @@ public class NuevoMedico extends javax.swing.JPanel {
     
     
     }//GEN-LAST:event_GuardarMedicoActionPerformed
+
+    private void CB_especialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_especialidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CB_especialidadActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

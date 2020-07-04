@@ -21,6 +21,9 @@ public class Sistema {
     private ArrayList<HistoriaClinica> historiasClinicas;
     private ArrayList<Cita> citas;
     private ArrayList<Consultorio> consultorios;
+    private ArrayList<Falla> fallas;
+    private ArrayList<Mensaje> mensajesParaAdmin;
+    private ArrayList<Mensaje> mensajesParaMed;
     
     public Sistema(){
         medicos = new ArrayList<>();
@@ -29,6 +32,9 @@ public class Sistema {
         historiasClinicas = new ArrayList<>();
         citas = new ArrayList<>();
         consultorios = new ArrayList<>();
+        fallas = new ArrayList<>();
+        mensajesParaAdmin = new ArrayList<>();
+        mensajesParaMed = new ArrayList<>();
     }
 
     public ArrayList<Medico> getMedicos() {
@@ -78,6 +84,30 @@ public class Sistema {
     public void setConsultorios(ArrayList<Consultorio> consultorios) {
         this.consultorios = consultorios;
     }
+
+    public ArrayList<Falla> getFallas() {
+        return fallas;
+    }
+
+    public void setFallas(ArrayList<Falla> fallas) {
+        this.fallas = fallas;
+    }
+
+    public ArrayList<Mensaje> getMensajesParaAdmin() {
+        return mensajesParaAdmin;
+    }
+
+    public void setMensajesParaAdmin(ArrayList<Mensaje> mensajes) {
+        this.mensajesParaAdmin = mensajes;
+    }
+
+    public ArrayList<Mensaje> getMensajesParaMed() {
+        return mensajesParaMed;
+    }
+
+    public void setMensajesParaMed(ArrayList<Mensaje> mensajesParaMed) {
+        this.mensajesParaMed = mensajesParaMed;
+    }
     
     public void setPacienteNoAsiste(Cita cita, boolean estado){
         cita.setPacienteAsistio(estado);
@@ -95,7 +125,7 @@ public class Sistema {
             }
         }
         
-        Calendar fecha = new GregorianCalendar(year, mes - 1, dia, hora, minuto);
+        Calendar fecha = new GregorianCalendar(year, mes - 1, dia, hora - 1, minuto);
         Cita cita = new Cita(fecha, null, medico, consultorio, especialidad);
         for(Cita c: sistema.citas){
             if(c.equals(cita)){
@@ -104,6 +134,7 @@ public class Sistema {
         }
         if(check){
             sistema.citas.add(cita);
+            medico.addCitaMd(cita);
         }else{
             System.out.println("La cita ya exite");
         }
@@ -137,6 +168,7 @@ public class Sistema {
                 dia = 1;
             }
             addCitasDia(dia, m, y, 7, especialidad, sistema);
+            dia++;
         }
     }
     
@@ -154,6 +186,7 @@ public class Sistema {
                 dia = 1;
             }
             addCitasDia(dia, m, y, 7, especialidad, idMedico, sistema);
+            dia++;
         }
     }
     
@@ -225,6 +258,21 @@ public class Sistema {
             medicoComparar = sistema.medicos.get(i);
             if(medicoComparar.getIdentificacion() == id){
                 return medicoComparar;
+            }
+        }
+        return null;
+    }
+    
+    public static Administrador encontrarAdministrador(long id, Sistema sistema){
+        
+        Administrador adminComparar;
+        
+        int l = sistema.administradores.size();
+        
+        for(int i = 0; i < l; i++){
+            adminComparar = sistema.administradores.get(i);
+            if(adminComparar.getIdentificacion() == id){
+                return adminComparar;
             }
         }
         return null;

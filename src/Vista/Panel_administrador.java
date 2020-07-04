@@ -35,6 +35,10 @@ public class Panel_administrador extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         Crear_medico = new javax.swing.JButton();
+        consultBtn = new javax.swing.JButton();
+        reporteFallasBtn = new javax.swing.JButton();
+        B_estadisticas = new javax.swing.JButton();
+        mensajesBtn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(51, 102, 255));
 
@@ -44,7 +48,7 @@ public class Panel_administrador extends javax.swing.JPanel {
         Panel_variante.setLayout(Panel_varianteLayout);
         Panel_varianteLayout.setHorizontalGroup(
             Panel_varianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 799, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         Panel_varianteLayout.setVerticalGroup(
             Panel_varianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -81,6 +85,34 @@ public class Panel_administrador extends javax.swing.JPanel {
             }
         });
 
+        consultBtn.setText("Consultorios");
+        consultBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultBtnActionPerformed(evt);
+            }
+        });
+
+        reporteFallasBtn.setText("Reporte de fallas");
+        reporteFallasBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reporteFallasBtnActionPerformed(evt);
+            }
+        });
+
+        B_estadisticas.setText("Estadisticas");
+        B_estadisticas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_estadisticasActionPerformed(evt);
+            }
+        });
+
+        mensajesBtn.setText("Mensajes");
+        mensajesBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mensajesBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -93,8 +125,16 @@ public class Panel_administrador extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Crear_medico)
-                .addContainerGap(318, Short.MAX_VALUE))
+                .addComponent(Crear_medico, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(consultBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(reporteFallasBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(B_estadisticas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(mensajesBtn)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,7 +144,11 @@ public class Panel_administrador extends javax.swing.JPanel {
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3)
-                    .addComponent(Crear_medico))
+                    .addComponent(Crear_medico)
+                    .addComponent(consultBtn)
+                    .addComponent(reporteFallasBtn)
+                    .addComponent(B_estadisticas)
+                    .addComponent(mensajesBtn))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -115,9 +159,9 @@ public class Panel_administrador extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Panel_variante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Panel_variante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,13 +223,69 @@ public class Panel_administrador extends javax.swing.JPanel {
         Panel_variante.repaint(); 
     }//GEN-LAST:event_Crear_medicoActionPerformed
 
+    private void consultBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultBtnActionPerformed
+        // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
+        Consultorios CS = new Consultorios();
+        CS.setSize(520, 341);
+        CS.setLocation(0, 0);
+        Panel_variante.removeAll();
+        Panel_variante.add(CS, BorderLayout.CENTER);
+        Panel_variante.revalidate();
+        Panel_variante.repaint();
+    }//GEN-LAST:event_consultBtnActionPerformed
+
+    private void reporteFallasBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporteFallasBtnActionPerformed
+        // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
+        ReporteFallasAdmin RA = new ReporteFallasAdmin();
+        RA.setSize(600, 400);
+        RA.setLocation(0, 0);
+        Panel_variante.removeAll();
+        Panel_variante.add(RA, BorderLayout.CENTER);
+        Panel_variante.revalidate();
+        Panel_variante.repaint();
+    }//GEN-LAST:event_reporteFallasBtnActionPerformed
+
+    private void B_estadisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_estadisticasActionPerformed
+        // TODO add your handling code here:
+        
+        VentanaHome.controlSesion.restart();
+        Graficas RA = new Graficas();
+        RA.setSize(650, 450);
+        RA.setLocation(0, 0);
+        Panel_variante.removeAll();
+        Panel_variante.add(RA, BorderLayout.CENTER);
+        Panel_variante.revalidate();
+        Panel_variante.repaint();
+        
+        
+        
+    }//GEN-LAST:event_B_estadisticasActionPerformed
+
+    private void mensajesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mensajesBtnActionPerformed
+        // TODO add your handling code here:
+        VentanaHome.controlSesion.restart();
+        CanalContactoAdmin CA = new CanalContactoAdmin();
+        CA.setSize(677, 455);
+        CA.setLocation(0, 0);
+        Panel_variante.removeAll();
+        Panel_variante.add(CA, BorderLayout.CENTER);
+        Panel_variante.revalidate();
+        Panel_variante.repaint();
+    }//GEN-LAST:event_mensajesBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton B_estadisticas;
     private javax.swing.JButton Crear_medico;
     private javax.swing.JPanel Panel_variante;
+    private javax.swing.JButton consultBtn;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton mensajesBtn;
+    private javax.swing.JButton reporteFallasBtn;
     // End of variables declaration//GEN-END:variables
 }

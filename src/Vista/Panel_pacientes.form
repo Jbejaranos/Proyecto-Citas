@@ -44,21 +44,23 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="B_citas" min="-2" pref="110" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="registroCitaButton" min="-2" pref="110" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                  <Component id="jButton3" min="-2" pref="110" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                  <Component id="B_mis_datos" min="-2" pref="110" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-              </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="443" max="-2" attributes="0"/>
-                  <Component id="Directorio" min="-2" pref="110" max="-2" attributes="0"/>
-                  <EmptySpace pref="25" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="registrarFallaBtn" alignment="1" min="-2" pref="117" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="B_citas" min="-2" pref="110" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="registroCitaButton" min="-2" pref="110" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="Directorio" min="-2" pref="110" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="B_mis_datos" min="-2" pref="110" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="historiaClinicaBtn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="46" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -69,12 +71,13 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="B_citas" alignment="3" min="-2" pref="110" max="-2" attributes="0"/>
                       <Component id="registroCitaButton" alignment="3" min="-2" pref="110" max="-2" attributes="0"/>
-                      <Component id="jButton3" alignment="3" min="-2" pref="110" max="-2" attributes="0"/>
                       <Component id="B_mis_datos" alignment="3" min="-2" pref="110" max="-2" attributes="0"/>
+                      <Component id="Directorio" alignment="3" min="-2" pref="110" max="-2" attributes="0"/>
+                      <Component id="historiaClinicaBtn" alignment="3" min="-2" pref="110" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="Directorio" min="-2" pref="110" max="-2" attributes="0"/>
-                  <EmptySpace pref="35" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                  <Component id="registrarFallaBtn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="101" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -96,11 +99,6 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="registroCitaButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="B"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JButton" name="B_mis_datos">
           <Properties>
             <Property name="text" type="java.lang.String" value="Mis datos"/>
@@ -115,6 +113,22 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DirectorioActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="registrarFallaBtn">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Registrar falla"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="registrarFallaBtnActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="historiaClinicaBtn">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Historia Clinica"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="historiaClinicaBtnActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

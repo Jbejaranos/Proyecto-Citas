@@ -25,12 +25,15 @@ public class Medico extends Persona{
         super(identificacion, nombre, password, genero, fechaNacimiento);
         this.citasAsignadas = citasAsignadas;
         this.especialidad = especialidad;
+        if(this.citasAsignadas == null)
+            this.citasAsignadas = new ArrayList<>();
     }
     
     public Medico(long identificacion, String nombre, String password, String genero, Calendar fechaNacimiento, String especialidad) {
         super(identificacion, nombre, password, genero, fechaNacimiento);
         //this.citasAsignadas = citasAsignadas;
         this.especialidad = especialidad;
+        this.citasAsignadas = new ArrayList<>();
     }
 
     public ArrayList<Cita> getCitasAsignadas() {
@@ -49,4 +52,7 @@ public class Medico extends Persona{
         this.especialidad = especialidad;
     }
     
+    public void addCitaMd(Cita c){
+        this.citasAsignadas.add(c);
+    }
 }

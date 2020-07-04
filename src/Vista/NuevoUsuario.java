@@ -249,7 +249,7 @@ public class NuevoUsuario extends javax.swing.JPanel {
             
             //add del paciente a la lista
             //Sistema system = new Sistema();
-            Paciente usuario_nuevo =  new Paciente(documento,nombre,Modelo.Encriptacion.encriptar(clave), sexo, nacimiento);//-----------------******
+            Paciente usuario_nuevo =  new Paciente(documento,nombre,Modelo.Encriptacion.encriptar(clave), sexo, nacimiento,null);//-----------------******
             Sistema.agregarPaciente(usuario_nuevo,Vista.VentanaHome.Sistema_principal);
             
             //Confirmacion visual
