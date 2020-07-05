@@ -36,7 +36,7 @@ public class VentanaHome extends javax.swing.JFrame {
     
     
     
-        public void BotonInicio(){
+    public void BotonInicio(){
         
         switch(sesion){
             case "paciente":
@@ -77,34 +77,34 @@ public class VentanaHome extends javax.swing.JFrame {
             break;
         }
     }
-        
     
     public VentanaHome() {
+        
         initComponents();
         Login PR = new  Login();
-        PR.setSize(1000, 1000);
+        NoticiasPanel NP = new NoticiasPanel();
+        
+        PR.setSize(500, 500);
         PR.setLocation(0,0);
+        NP.setSize(500, 500);
+        NP.setLocation(500, 0);
         Panel_variante.removeAll();
+        PanelNoticias.removeAll();
         Panel_variante.add(PR,BorderLayout.CENTER);
+        PanelNoticias.add(NP,BorderLayout.WEST);
         Panel_variante.revalidate();
         Panel_variante.repaint();
+        PanelNoticias.revalidate();
+        PanelNoticias.repaint();
         
         Panel_desarrollo.setVisible(false);
         controlSesion.start();
         protocoloPrimerUso();
         
-        
-        
-        
-        
-        
-         
-        
         //--------------------------------------------------------------------------------------------------------------
         
-        
-     GregorianCalendar nacimiento = crear_horario(2000,7,5,0,0);
-     GregorianCalendar fechacita = crear_horario(2020,8,10,7,0);
+        GregorianCalendar nacimiento = crear_horario(2000,7,5,0,0);
+        GregorianCalendar fechacita = crear_horario(2020,8,10,7,0);
      
         String[] especialidades = {   //24 max index
         
@@ -137,6 +137,7 @@ public class VentanaHome extends javax.swing.JFrame {
                 
                 
         for(long i = 0;i<100;i++){
+            
             Medico med = new Medico(i, "med"+i, encriptar("123"), "Femenino",nacimiento, "General");
             Sistema_principal.getMedicos().add(med);
          
@@ -154,60 +155,45 @@ public class VentanaHome extends javax.swing.JFrame {
             
         }
         
-        
-        
         for(long i = 100;i<115;i++){
-            
         
+            Medico med = new Medico(i, "med"+i, encriptar("123"), "Femenino",nacimiento, especialidades[(int)i%14]);
+            Sistema_principal.getMedicos().add(med);
         
+            Consultorio con = new Consultorio( (int)i, "Consultorio "+i , "Sede Norte");
+            Sistema_principal.getConsultorios().add(con);
         
-        Medico med = new Medico(i, "med"+i, encriptar("123"), "Femenino",nacimiento, especialidades[(int)i%14]);
-        Sistema_principal.getMedicos().add(med);
+            Paciente pac = new Paciente(i, "pac"+ i, encriptar("123"), "Masculino",nacimiento);
+            Sistema_principal.getPacientes().add(pac);
         
-        Consultorio con = new Consultorio( (int)i, "Consultorio "+i , "Sede Norte");
-        Sistema_principal.getConsultorios().add(con);
-        
-        Paciente pac = new Paciente(i, "pac"+ i, encriptar("123"), "Masculino",nacimiento);
-        Sistema_principal.getPacientes().add(pac);
-        
-        Cita cita = new Cita(fechacita, pac, med,con, especialidades [(int)i%14]);
-        Sistema_principal.getCitas().add(cita);
+            Cita cita = new Cita(fechacita, pac, med,con, especialidades [(int)i%14]);
+            Sistema_principal.getCitas().add(cita);
         
             pac.addCita(cita);
             med.addCitaMd(cita);
+            
         }
-        
-        
-        
-        
-        
         
         for(long i = 115;i<160;i++){
             
+            Medico med = new Medico(i, "med"+i, encriptar("123"), "Femenino",nacimiento, especialidades[(int)i%14]);
+            Sistema_principal.getMedicos().add(med);
         
+            Consultorio con = new Consultorio( (int)i, "Consultorio "+i , "Sede Norte");
+            Sistema_principal.getConsultorios().add(con);
         
+            Paciente pac = new Paciente(i, "pac"+ i, encriptar("123"), "Masculino",nacimiento);
+            Sistema_principal.getPacientes().add(pac);
         
-        Medico med = new Medico(i, "med"+i, encriptar("123"), "Femenino",nacimiento, especialidades[(int)i%14]);
-        Sistema_principal.getMedicos().add(med);
+            Cita cita = new Cita(fechacita, null, med,con, especialidades [(int)i%20]);
+            Sistema_principal.getCitas().add(cita);
         
-        Consultorio con = new Consultorio( (int)i, "Consultorio "+i , "Sede Norte");
-        Sistema_principal.getConsultorios().add(con);
-        
-        Paciente pac = new Paciente(i, "pac"+ i, encriptar("123"), "Masculino",nacimiento);
-        Sistema_principal.getPacientes().add(pac);
-        
-        Cita cita = new Cita(fechacita, null, med,con, especialidades [(int)i%20]);
-        Sistema_principal.getCitas().add(cita);
         }
-        
-        
-        
         
         for(long i = 160;i<500;i++){
             
-
-        Paciente pac = new Paciente(i, "pac"+ i, encriptar("123"), "Masculino",nacimiento);
-        Sistema_principal.getPacientes().add(pac);
+            Paciente pac = new Paciente(i, "pac"+ i, encriptar("123"), "Masculino",nacimiento);
+            Sistema_principal.getPacientes().add(pac);
         }
         //-----------------------------------------------------------------------------------------------------------------
     }
@@ -231,9 +217,13 @@ public class VentanaHome extends javax.swing.JFrame {
         Admin = new javax.swing.JButton();
         Iniciar_una_sesion = new javax.swing.JButton();
         BotonIrHome = new javax.swing.JButton();
+        PanelNoticias = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 153));
+        setPreferredSize(new java.awt.Dimension(1097, 800));
+
+        Panel_variante.setPreferredSize(new java.awt.Dimension(955, 600));
 
         javax.swing.GroupLayout Panel_varianteLayout = new javax.swing.GroupLayout(Panel_variante);
         Panel_variante.setLayout(Panel_varianteLayout);
@@ -243,7 +233,7 @@ public class VentanaHome extends javax.swing.JFrame {
         );
         Panel_varianteLayout.setVerticalGroup(
             Panel_varianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 538, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
 
         crearUSUARIO.setText("Agregar");
@@ -343,13 +333,28 @@ public class VentanaHome extends javax.swing.JFrame {
             }
         });
 
+        PanelNoticias.setPreferredSize(new java.awt.Dimension(950, 100));
+
+        javax.swing.GroupLayout PanelNoticiasLayout = new javax.swing.GroupLayout(PanelNoticias);
+        PanelNoticias.setLayout(PanelNoticiasLayout);
+        PanelNoticiasLayout.setHorizontalGroup(
+            PanelNoticiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        PanelNoticiasLayout.setVerticalGroup(
+            PanelNoticiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Panel_variante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Panel_variante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelNoticias, javax.swing.GroupLayout.DEFAULT_SIZE, 955, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -362,17 +367,19 @@ public class VentanaHome extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Panel_variante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(Panel_desarrollo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BotonIrHome, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(Panel_desarrollo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(BotonIrHome, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(PanelNoticias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Panel_variante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -522,6 +529,7 @@ public class VentanaHome extends javax.swing.JFrame {
     private javax.swing.JButton BotonIrHome;
     private javax.swing.JButton Iniciar_una_sesion;
     private javax.swing.JButton Ir_login;
+    public static javax.swing.JPanel PanelNoticias;
     private javax.swing.JPanel Panel_desarrollo;
     public static javax.swing.JPanel Panel_variante;
     private javax.swing.JButton crearUSUARIO;
