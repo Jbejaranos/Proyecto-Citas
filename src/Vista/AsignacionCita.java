@@ -10,6 +10,7 @@ import Modelo.Paciente;
 import Modelo.Sistema;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
@@ -49,7 +50,7 @@ public class AsignacionCita extends javax.swing.JPanel {
                 model.addRow(new Object[]{fecha, especialidad, medico, lugar});
             }
         }
-        
+        this.DefaultTableModel = model;
     }
     
     
@@ -63,10 +64,10 @@ public class AsignacionCita extends javax.swing.JPanel {
         int columna = 0;
         
         busfiltro.setRowFilter(RowFilter.regexFilter(filtro, columna));
-    } else if (jRMedico.isSelected()) {
+    } else if (jREspecialidad.isSelected()) {
         int columna = 1;
         busfiltro.setRowFilter(RowFilter.regexFilter(filtro, columna));
-    } else if (jREspecialidad.isSelected()) {
+    } else if (jRMedico.isSelected()) {
         int columna = 2;
         busfiltro.setRowFilter(RowFilter.regexFilter(filtro, columna));
     }
@@ -160,12 +161,16 @@ public class AsignacionCita extends javax.swing.JPanel {
             }
         });
 
+        bfiltro.add(jRFecha);
         jRFecha.setText("Fecha");
 
+        bfiltro.add(jREspecialidad);
         jREspecialidad.setText("Especialidad");
 
+        bfiltro.add(jRMedico);
         jRMedico.setText("Médico");
 
+        bfiltro.add(jRLugar);
         jRLugar.setText("Lugar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -248,6 +253,18 @@ public class AsignacionCita extends javax.swing.JPanel {
     private void detallesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detallesButtonActionPerformed
         // TODO add your handling code here:
         VentanaHome.controlSesion.restart();
+        int seleccion = citasTable.getSelectedRow();
+        if(seleccion != -1){
+            Cita cita = citasDisponibles.get(seleccion);
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+            String fecha = "Fecha: " + formato.format(cita.getFecha().getTime()) + "\n";
+            String medico = "Medico: " + cita.getMedico().getNombre() + "\n";
+            String especialidad = "Especialidad: " + cita.getEspecialidad() + "\n";
+            String consultorio = "Lugar: Consultorio " + cita.getConsultorio().getNumero() + ", sede " + cita.getConsultorio().getSede() + "\n";
+            JOptionPane.showMessageDialog(null, fecha + medico + especialidad + consultorio);
+        }else{
+            JOptionPane.showMessageDialog(null, "Por favor seleccione una cita");
+        }
     }//GEN-LAST:event_detallesButtonActionPerformed
 
     private void BuscarParametroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BuscarParametroKeyTyped

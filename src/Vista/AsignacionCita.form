@@ -203,21 +203,33 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRFecha">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="bfiltro"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Fecha"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jREspecialidad">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="bfiltro"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Especialidad"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRMedico">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="bfiltro"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="M&#xe9;dico"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRLugar">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="bfiltro"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Lugar"/>
       </Properties>
     </Component>
