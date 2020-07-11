@@ -114,12 +114,12 @@ public class PanelMedico extends javax.swing.JPanel {
                 .addGroup(panelVarianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(historiaClinicaBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE))
-                .addContainerGap(270, Short.MAX_VALUE))
+                .addContainerGap(291, Short.MAX_VALUE))
         );
         panelVarianteLayout.setVerticalGroup(
             panelVarianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelVarianteLayout.createSequentialGroup()
-                .addGap(158, 158, 158)
+                .addGap(85, 85, 85)
                 .addGroup(panelVarianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(B_mis_datos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BTHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -130,7 +130,7 @@ public class PanelMedico extends javax.swing.JPanel {
                     .addComponent(B_recetas, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
                     .addComponent(B_excusas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addContainerGap(199, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -140,7 +140,7 @@ public class PanelMedico extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(panelVariante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,7 +179,7 @@ public class PanelMedico extends javax.swing.JPanel {
         // TODO add your handling code here:
         VentanaHome.controlSesion.restart();
         CanalContactoMedico CM = new CanalContactoMedico();
-        CM.setSize(650, 485);
+        CM.setSize(1000, 1000);
         CM.setLocation(0,0);
         panelVariante.removeAll();
         panelVariante.add(CM ,BorderLayout.CENTER);
@@ -203,7 +203,7 @@ public class PanelMedico extends javax.swing.JPanel {
         // TODO add your handling code here:
         VentanaHome.controlSesion.restart();
         FormulaMedica PR = new FormulaMedica();
-        PR.setSize(650, 485);
+        PR.setSize(1000, 1000);
         PR.setLocation(0,0);
         panelVariante.removeAll();
         panelVariante.add(PR,BorderLayout.CENTER);
@@ -215,7 +215,7 @@ public class PanelMedico extends javax.swing.JPanel {
         // TODO add your handling code here:
         VentanaHome.controlSesion.restart();
         Excusas PR = new Excusas();
-        PR.setSize(650, 485);
+        PR.setSize(1000, 1000);
         PR.setLocation(0,0);
         panelVariante.removeAll();
         panelVariante.add(PR,BorderLayout.CENTER);
@@ -227,7 +227,7 @@ public class PanelMedico extends javax.swing.JPanel {
         // TODO add your handling code here:
         VentanaHome.controlSesion.restart();
         Incapacidades PR = new Incapacidades();
-        PR.setSize(650, 485);
+        PR.setSize(1000, 1000);
         PR.setLocation(0,0);
         panelVariante.removeAll();
         panelVariante.add(PR,BorderLayout.CENTER);
