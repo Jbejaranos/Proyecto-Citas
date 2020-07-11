@@ -58,6 +58,7 @@ public class Login extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setMaximumSize(new java.awt.Dimension(100000, 100000));
 
         jLabel1.setText("Documento");
 
