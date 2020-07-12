@@ -176,7 +176,7 @@ public class PanelPrimerUso extends javax.swing.JPanel {
                 Calendar fechaNacimientoAdmin = this.crearAdmin.getFechaNacimiento();
                 this.administrador.setFechaNacimiento(fechaNacimientoAdmin);
 
-                int idAdmin = this.crearAdmin.getIdentificacion();
+                long idAdmin = this.crearAdmin.getIdentificacion();
                 this.administrador.setIdentificacion(idAdmin);
 
                 String passwordAdmin = this.crearAdmin.getPasswordEncrypted();
@@ -195,7 +195,7 @@ public class PanelPrimerUso extends javax.swing.JPanel {
                 Calendar fechaNacimientoMedico = this.crearMedico.getFechaNacimiento();
                 this.medico.setFechaNacimiento(fechaNacimientoMedico);
 
-                int idMedico = this.crearMedico.getIdentificacion();
+                long idMedico = this.crearMedico.getIdentificacion();
                 this.medico.setIdentificacion(idMedico);
 
                 String passwordMedico = this.crearMedico.getPasswordEncrypted();
@@ -211,7 +211,7 @@ public class PanelPrimerUso extends javax.swing.JPanel {
                 Calendar fechaNacimientoPaciente = this.crearPaciente.getFechaNacimiento();
                 this.paciente.setFechaNacimiento(fechaNacimientoPaciente);
                 
-                int idPaciente = this.crearPaciente.getIdentificacion();
+                long idPaciente = this.crearPaciente.getIdentificacion();
                 this.paciente.setIdentificacion(idPaciente);
                 
                 String passwordPaciente = this.crearPaciente.getPasswordEncrypted();

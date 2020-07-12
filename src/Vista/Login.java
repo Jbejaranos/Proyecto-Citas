@@ -173,7 +173,7 @@ public class Login extends javax.swing.JPanel {
         switch (rol_sesion){
 
             case "Paciente":
-                pac = encontrarPaciente(Integer.valueOf(TFDocumento.getText()),Vista.VentanaHome.Sistema_principal);
+                pac = encontrarPaciente(Long.valueOf(TFDocumento.getText()),Vista.VentanaHome.Sistema_principal);
 
                 if(pac != null){
                    if( Modelo.Encriptacion.desencriptar(pac.getPassword()).equals(entrada)){    //14 de junio se agrego encriptado ---------------[]
@@ -199,7 +199,7 @@ public class Login extends javax.swing.JPanel {
 
             case "Médico":
 
-                med = encontrarMedico(Integer.valueOf(TFDocumento.getText()),Vista.VentanaHome.Sistema_principal);
+                med = encontrarMedico(Long.valueOf(TFDocumento.getText()),Vista.VentanaHome.Sistema_principal);
 
                 if(med != null){
                    if(Modelo.Encriptacion.desencriptar(med.getPassword()).equals(entrada)){
@@ -224,7 +224,7 @@ public class Login extends javax.swing.JPanel {
                 break;
 
             case "Administrador":
-                adm = Modelo.Sistema.encontrarAdministrador(Integer.valueOf(TFDocumento.getText()), VentanaHome.Sistema_principal);
+                adm = Modelo.Sistema.encontrarAdministrador(Long.valueOf(TFDocumento.getText()), VentanaHome.Sistema_principal);
                 
                 if(adm != null){
                     if(Modelo.Encriptacion.desencriptar(adm.getPassword()).equals(entrada)){

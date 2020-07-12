@@ -160,8 +160,8 @@ public class PanelPrimerUsoCrearMedico extends javax.swing.JPanel {
         return fechaObtenida;
     }
     
-    public int getIdentificacion(){
-        return Integer.parseInt(this.idTF.getText());
+    public long getIdentificacion(){
+        return Long.parseLong(this.idTF.getText());
     }
     
     public String getEspecialidad(){
