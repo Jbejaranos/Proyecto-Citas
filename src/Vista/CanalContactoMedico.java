@@ -117,10 +117,10 @@ public class CanalContactoMedico extends javax.swing.JPanel {
         panelTitulo.setLayout(panelTituloLayout);
         panelTituloLayout.setHorizontalGroup(
             panelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelTituloLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTituloLayout.createSequentialGroup()
+                .addGap(225, 225, 225)
+                .addComponent(panelLabel)
+                .addGap(204, 204, 204))
         );
         panelTituloLayout.setVerticalGroup(
             panelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,8 +175,8 @@ public class CanalContactoMedico extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(fechaLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(fechaTF)
-                .addContainerGap())
+                .addComponent(fechaTF, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(133, 133, 133))
         );
         panelRemitenteLayout.setVerticalGroup(
             panelRemitenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,12 +223,12 @@ public class CanalContactoMedico extends javax.swing.JPanel {
                     .addComponent(jScrollPane2)
                     .addGroup(panelMensajeLayout.createSequentialGroup()
                         .addComponent(mensajeLabel)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(476, 476, 476)))
                 .addContainerGap())
             .addGroup(panelMensajeLayout.createSequentialGroup()
-                .addContainerGap(148, Short.MAX_VALUE)
+                .addGap(111, 111, 111)
                 .addComponent(redactarBtn)
-                .addGap(73, 73, 73)
+                .addGap(110, 110, 110)
                 .addComponent(responderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(98, 98, 98))
         );
@@ -250,11 +250,11 @@ public class CanalContactoMedico extends javax.swing.JPanel {
         panelContenido.setLayout(panelContenidoLayout);
         panelContenidoLayout.setHorizontalGroup(
             panelContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelRemitente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelRemitente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelContenidoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panelMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(12, 12, 12)
+                .addComponent(panelMensaje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(12, 12, 12))
         );
         panelContenidoLayout.setVerticalGroup(
             panelContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -275,8 +275,8 @@ public class CanalContactoMedico extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(panelLista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(panelContenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(283, Short.MAX_VALUE))
+                        .addComponent(panelContenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(283, 283, 283))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -341,6 +341,7 @@ public class CanalContactoMedico extends javax.swing.JPanel {
         this.remitenteTF.setEditable(false);
         this.fechaLabel.setVisible(true);
         this.fechaTF.setVisible(true);
+        this.fechaTF.setSize(146, this.fechaTF.getHeight());
         this.panelMensaje.removeAll();
         this.panelMensaje.add(mensajeLabel);
         this.panelMensaje.add(jScrollPane2);
