@@ -300,7 +300,7 @@ public class CanalContactoMedico extends javax.swing.JPanel {
         this.remitenteTF.setEditable(true);
         this.fechaLabel.setVisible(false);
         this.fechaTF.setVisible(false);
-        this.panelRespuesta.setSize(this.panelMensaje.getWidth(), this.panelMensaje.getHeight());
+        this.panelRespuesta.setSize(this.panelMensaje.getWidth() - 14, this.panelMensaje.getHeight());
         this.panelRespuesta.setLocation(0, 0);
         this.panelMensaje.removeAll();
         this.panelMensaje.add(this.panelRespuesta);
