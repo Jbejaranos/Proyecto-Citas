@@ -185,40 +185,40 @@ public class CitasMedico extends javax.swing.JPanel {
                         case Calendar.MONDAY:
                             switch (i.getFecha().get(Calendar.HOUR_OF_DAY)){
                                 case 7:
-                                    model.setValueAt(data, 1, 1);
+                                    model.setValueAt(data, 0, 1);
                                     break;
                                 case 8:
-                                    model.setValueAt(data, 2, 1);
+                                    model.setValueAt(data, 1, 1);
                                     break;
                                 case 9:
-                                    model.setValueAt(data, 3, 1);
+                                    model.setValueAt(data, 2, 1);
                                     break;
                                 case 10:
-                                    model.setValueAt(data, 4, 1);
+                                    model.setValueAt(data, 3, 1);
                                     break;
                                 case 11:
-                                    model.setValueAt(data, 5, 1);
+                                    model.setValueAt(data, 4, 1);
                                     break;
                                 case 12:
-                                    model.setValueAt(data, 6, 1);
+                                    model.setValueAt(data, 5, 1);
                                     break;
                                 case 13:
-                                    model.setValueAt(data, 7, 1);
+                                    model.setValueAt(data, 6, 1);
                                     break;
                                 case 14:
-                                    model.setValueAt(data, 8, 1);
+                                    model.setValueAt(data, 7, 1);
                                     break;
                                 case 15:
-                                    model.setValueAt(data, 9, 1);
+                                    model.setValueAt(data, 8, 1);
                                     break;
                                 case 16:
-                                    model.setValueAt(data, 10, 1);
+                                    model.setValueAt(data, 9, 1);
                                     break;
                                 case 17:
-                                    model.setValueAt(data, 11, 1);
+                                    model.setValueAt(data, 10, 1);
                                     break;
                                 case 18:
-                                    model.setValueAt(data, 12, 1);
+                                    model.setValueAt(data, 11, 1);
                                     break;
                                 default:
                                     break;
@@ -227,40 +227,40 @@ public class CitasMedico extends javax.swing.JPanel {
                         case Calendar.TUESDAY:
                             switch (i.getFecha().get(Calendar.HOUR_OF_DAY)){
                                 case 7:
-                                    model.setValueAt(data, 1, 2);
+                                    model.setValueAt(data, 0, 2);
                                     break;
                                 case 8:
-                                    model.setValueAt(data, 2, 2);
+                                    model.setValueAt(data, 1, 2);
                                     break;
                                 case 9:
-                                    model.setValueAt(data, 3, 2);
+                                    model.setValueAt(data, 2, 2);
                                     break;
                                 case 10:
-                                    model.setValueAt(data, 4, 2);
+                                    model.setValueAt(data, 3, 2);
                                     break;
                                 case 11:
-                                    model.setValueAt(data, 5, 2);
+                                    model.setValueAt(data, 4, 2);
                                     break;
                                 case 12:
-                                    model.setValueAt(data, 6, 2);
+                                    model.setValueAt(data, 5, 2);
                                     break;
                                 case 13:
-                                    model.setValueAt(data, 7, 2);
+                                    model.setValueAt(data, 6, 2);
                                     break;
                                 case 14:
-                                    model.setValueAt(data, 8, 2);
+                                    model.setValueAt(data, 7, 2);
                                     break;
                                 case 15:
-                                    model.setValueAt(data, 9, 2);
+                                    model.setValueAt(data, 8, 2);
                                     break;
                                 case 16:
-                                    model.setValueAt(data, 10, 2);
+                                    model.setValueAt(data, 9, 2);
                                     break;
                                 case 17:
-                                    model.setValueAt(data, 11, 2);
+                                    model.setValueAt(data, 10, 2);
                                     break;
                                 case 18:
-                                    model.setValueAt(data, 12, 2);
+                                    model.setValueAt(data, 11, 2);
                                     break;
                                 default:
                                     break;
@@ -269,40 +269,40 @@ public class CitasMedico extends javax.swing.JPanel {
                         case Calendar.WEDNESDAY:
                             switch (i.getFecha().get(Calendar.HOUR_OF_DAY)){
                                 case 7:
-                                    model.setValueAt(data, 1, 3);
+                                    model.setValueAt(data, 0, 3);
                                     break;
                                 case 8:
-                                    model.setValueAt(data, 2, 3);
+                                    model.setValueAt(data, 1, 3);
                                     break;
                                 case 9:
-                                    model.setValueAt(data, 3, 3);
+                                    model.setValueAt(data, 2, 3);
                                     break;
                                 case 10:
-                                    model.setValueAt(data, 4, 3);
+                                    model.setValueAt(data, 3, 3);
                                     break;
                                 case 11:
-                                    model.setValueAt(data, 5, 3);
+                                    model.setValueAt(data, 4, 3);
                                     break;
                                 case 12:
-                                    model.setValueAt(data, 6, 3);
+                                    model.setValueAt(data, 5, 3);
                                     break;
                                 case 13:
-                                    model.setValueAt(data, 7, 3);
+                                    model.setValueAt(data, 6, 3);
                                     break;
                                 case 14:
-                                    model.setValueAt(data, 8, 3);
+                                    model.setValueAt(data, 7, 3);
                                     break;
                                 case 15:
-                                    model.setValueAt(data, 9, 3);
+                                    model.setValueAt(data, 8, 3);
                                     break;
                                 case 16:
-                                    model.setValueAt(data, 10, 3);
+                                    model.setValueAt(data, 9, 3);
                                     break;
                                 case 17:
-                                    model.setValueAt(data, 11, 3);
+                                    model.setValueAt(data, 10, 3);
                                     break;
                                 case 18:
-                                    model.setValueAt(data, 12, 3);
+                                    model.setValueAt(data, 11, 3);
                                     break;
                                 default:
                                     break;
@@ -311,40 +311,40 @@ public class CitasMedico extends javax.swing.JPanel {
                         case Calendar.THURSDAY:
                             switch (i.getFecha().get(Calendar.HOUR_OF_DAY)){
                                 case 7:
-                                    model.setValueAt(data, 1, 4);
+                                    model.setValueAt(data, 0, 4);
                                     break;
                                 case 8:
-                                    model.setValueAt(data, 2, 4);
+                                    model.setValueAt(data, 1, 4);
                                     break;
                                 case 9:
-                                    model.setValueAt(data, 3, 4);
+                                    model.setValueAt(data, 2, 4);
                                     break;
                                 case 10:
-                                    model.setValueAt(data, 4, 4);
+                                    model.setValueAt(data, 3, 4);
                                     break;
                                 case 11:
-                                    model.setValueAt(data, 5, 4);
+                                    model.setValueAt(data, 4, 4);
                                     break;
                                 case 12:
-                                    model.setValueAt(data, 6, 4);
+                                    model.setValueAt(data, 5, 4);
                                     break;
                                 case 13:
-                                    model.setValueAt(data, 7, 4);
+                                    model.setValueAt(data, 6, 4);
                                     break;
                                 case 14:
-                                    model.setValueAt(data, 8, 4);
+                                    model.setValueAt(data, 7, 4);
                                     break;
                                 case 15:
-                                    model.setValueAt(data, 9, 4);
+                                    model.setValueAt(data, 8, 4);
                                     break;
                                 case 16:
-                                    model.setValueAt(data, 10, 4);
+                                    model.setValueAt(data, 9, 4);
                                     break;
                                 case 17:
-                                    model.setValueAt(data, 11, 4);
+                                    model.setValueAt(data, 10, 4);
                                     break;
                                 case 18:
-                                    model.setValueAt(data, 12, 4);
+                                    model.setValueAt(data, 11, 4);
                                     break;
                                 default:
                                     break;
@@ -353,40 +353,40 @@ public class CitasMedico extends javax.swing.JPanel {
                         case Calendar.FRIDAY:
                             switch (i.getFecha().get(Calendar.HOUR_OF_DAY)){
                                 case 7:
-                                    model.setValueAt(data, 1, 5);
+                                    model.setValueAt(data, 0, 5);
                                     break;
                                 case 8:
-                                    model.setValueAt(data, 2, 5);
+                                    model.setValueAt(data, 1, 5);
                                     break;
                                 case 9:
-                                    model.setValueAt(data, 3, 5);
+                                    model.setValueAt(data, 2, 5);
                                     break;
                                 case 10:
-                                    model.setValueAt(data, 4, 5);
+                                    model.setValueAt(data, 3, 5);
                                     break;
                                 case 11:
-                                    model.setValueAt(data, 5, 5);
+                                    model.setValueAt(data, 4, 5);
                                     break;
                                 case 12:
-                                    model.setValueAt(data, 6, 5);
+                                    model.setValueAt(data, 5, 5);
                                     break;
                                 case 13:
-                                    model.setValueAt(data, 7, 5);
+                                    model.setValueAt(data, 6, 5);
                                     break;
                                 case 14:
-                                    model.setValueAt(data, 8, 5);
+                                    model.setValueAt(data, 7, 5);
                                     break;
                                 case 15:
-                                    model.setValueAt(data, 9, 5);
+                                    model.setValueAt(data, 8, 5);
                                     break;
                                 case 16:
-                                    model.setValueAt(data, 10, 5);
+                                    model.setValueAt(data, 9, 5);
                                     break;
                                 case 17:
-                                    model.setValueAt(data, 11, 5);
+                                    model.setValueAt(data, 10, 5);
                                     break;
                                 case 18:
-                                    model.setValueAt(data, 12, 5);
+                                    model.setValueAt(data, 11, 5);
                                     break;
                                 default:
                                     break;
@@ -395,40 +395,40 @@ public class CitasMedico extends javax.swing.JPanel {
                         case Calendar.SATURDAY:
                             switch (i.getFecha().get(Calendar.HOUR_OF_DAY)){
                                 case 7:
-                                    model.setValueAt(data, 1, 6);
+                                    model.setValueAt(data, 0, 6);
                                     break;
                                 case 8:
-                                    model.setValueAt(data, 2, 6);
+                                    model.setValueAt(data, 1, 6);
                                     break;
                                 case 9:
-                                    model.setValueAt(data, 3, 6);
+                                    model.setValueAt(data, 2, 6);
                                     break;
                                 case 10:
-                                    model.setValueAt(data, 4, 6);
+                                    model.setValueAt(data, 3, 6);
                                     break;
                                 case 11:
-                                    model.setValueAt(data, 5, 6);
+                                    model.setValueAt(data, 4, 6);
                                     break;
                                 case 12:
-                                    model.setValueAt(data, 6, 6);
+                                    model.setValueAt(data, 5, 6);
                                     break;
                                 case 13:
-                                    model.setValueAt(data, 7, 6);
+                                    model.setValueAt(data, 6, 6);
                                     break;
                                 case 14:
-                                    model.setValueAt(data, 8, 6);
+                                    model.setValueAt(data, 7, 6);
                                     break;
                                 case 15:
-                                    model.setValueAt(data, 9, 6);
+                                    model.setValueAt(data, 8, 6);
                                     break;
                                 case 16:
-                                    model.setValueAt(data, 10, 6);
+                                    model.setValueAt(data, 9, 6);
                                     break;
                                 case 17:
-                                    model.setValueAt(data, 11, 6);
+                                    model.setValueAt(data, 10, 6);
                                     break;
                                 case 18:
-                                    model.setValueAt(data, 12, 6);
+                                    model.setValueAt(data, 11, 6);
                                     break;
                                 default:
                                     break;

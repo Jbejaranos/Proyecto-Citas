@@ -125,7 +125,7 @@ public class Sistema {
             }
         }
         
-        Calendar fecha = new GregorianCalendar(year, mes - 1, dia, hora - 1, minuto);
+        Calendar fecha = new GregorianCalendar(year, mes - 1, dia, hora, minuto);
         Cita cita = new Cita(fecha, null, medico, consultorio, especialidad);
         for(Cita c: sistema.citas){
             if(c.equals(cita)){

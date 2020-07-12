@@ -12,6 +12,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
@@ -258,10 +259,26 @@ public class AsignacionCita extends javax.swing.JPanel {
             Cita cita = citasDisponibles.get(seleccion);
             SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
             String fecha = "Fecha: " + formato.format(cita.getFecha().getTime()) + "\n";
+            int hour = cita.getFecha().get(Calendar.HOUR);
+            int minute = cita.getFecha().get(Calendar.MINUTE);
+            String horaDia = "";
+            String minuto = "";
+            String AM_PM = (cita.getFecha().get(Calendar.AM_PM) == 0) ? "AM" : "PM";
+            if(hour < 10){
+                horaDia = "0" + hour;
+            }else{
+                horaDia = "" + hour;
+            }
+            if(minute < 10){
+                minuto = "0" + minute;
+            }else{
+                minuto = "" + minute;
+            }
+            String hora = "Hora: " + horaDia + ":" + minuto + " " + AM_PM + "\n";
             String medico = "Medico: " + cita.getMedico().getNombre() + "\n";
             String especialidad = "Especialidad: " + cita.getEspecialidad() + "\n";
             String consultorio = "Lugar: Consultorio " + cita.getConsultorio().getNumero() + ", sede " + cita.getConsultorio().getSede() + "\n";
-            JOptionPane.showMessageDialog(null, fecha + medico + especialidad + consultorio);
+            JOptionPane.showMessageDialog(null, fecha + hora + medico + especialidad + consultorio);
         }else{
             JOptionPane.showMessageDialog(null, "Por favor seleccione una cita");
         }

@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -269,7 +270,7 @@ public class CrearCitas extends javax.swing.JPanel {
                 Sistema.addCitasSemana(dia, diaSemana(dia, mes, year), mes, year, especialidad, idMedico, Vista.VentanaHome.Sistema_principal);
             }
         }
-        System.out.println("Citas creadas exitosamente");
+        JOptionPane.showMessageDialog(this, "Citas creadas exitosamente", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_aceptarButtonActionPerformed
 
     public int mesEnt(String mes){
