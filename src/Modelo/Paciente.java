@@ -17,7 +17,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="pacientes")
-public class Paciente extends Persona {
+public class Paciente extends Persona implements java.io.Serializable {
     
     private ArrayList<Cita> citasRegistradas;
     @OneToOne(mappedBy = "paciente")

@@ -11,7 +11,7 @@ import java.util.Calendar;
  *
  * @author Jorge
  */
-public class Mensaje {
+public class Mensaje implements java.io.Serializable {
     private long idRemitente;
     private long idDestinatario;
     private Calendar fecha;

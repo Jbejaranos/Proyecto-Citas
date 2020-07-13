@@ -23,7 +23,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name="historiasClinicas")
-public class HistoriaClinica {
+public class HistoriaClinica implements java.io.Serializable {
     
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)

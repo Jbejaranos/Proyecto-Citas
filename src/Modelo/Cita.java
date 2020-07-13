@@ -24,7 +24,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table (name="citas")
-public class Cita {
+public class Cita implements java.io.Serializable {
     
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)

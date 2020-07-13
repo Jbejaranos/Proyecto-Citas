@@ -14,7 +14,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="administradores")
-public class Administrador extends Persona {
+public class Administrador extends Persona implements java.io.Serializable {
     
     public Administrador(long identificacion, String nombre, String password, String genero, Calendar fechaNacimiento) {
         super(identificacion, nombre, password, genero, fechaNacimiento);

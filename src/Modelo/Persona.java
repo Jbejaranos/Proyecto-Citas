@@ -23,7 +23,7 @@ import javax.persistence.TemporalType;
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Table(name="personas")
-public class Persona {
+public class Persona implements java.io.Serializable {
     
     @Id
     @Column(name="id",updatable=false,nullable=false)
