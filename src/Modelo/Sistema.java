@@ -13,7 +13,7 @@ import java.util.GregorianCalendar;
  *
  * @author Jorge
  */
-public class Sistema {
+public class Sistema implements java.io.Serializable {
     
     private ArrayList<Medico> medicos;
     private ArrayList<Paciente> pacientes;

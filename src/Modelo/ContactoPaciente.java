@@ -9,7 +9,7 @@ package Modelo;
  *
  * @author Alejandro Ortiz
  */
-public class ContactoPaciente {
+public class ContactoPaciente implements java.io.Serializable {
     
 public String direccion;
 public String telefono ;

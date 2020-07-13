@@ -11,7 +11,7 @@ import java.util.Calendar;
  *
  * @author Jorge
  */
-public class Falla {
+public class Falla implements java.io.Serializable {
     private Calendar fecha;
     private Paciente usuario;
     private String componente;

@@ -17,7 +17,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="consultorios")
-public class Consultorio {
+public class Consultorio implements java.io.Serializable {
     
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)

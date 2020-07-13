@@ -16,7 +16,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="medicos")
-public class Medico extends Persona{
+public class Medico extends Persona implements java.io.Serializable {
     
     private ArrayList<Cita> citasAsignadas;
     private String especialidad;

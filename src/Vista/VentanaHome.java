@@ -15,6 +15,7 @@ import Modelo.Paciente;
 import Modelo.Sistema;
 import static Vista.Login.sesion;
 import static Vista.NuevoUsuario.crear_horario;
+import static Vista.SerializacionSistema.guardarSistema;
 import static Vista.TestScript.nacimiento;
 import java.awt.BorderLayout;
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ public class VentanaHome extends javax.swing.JFrame {
      * Creates new form VentanaHome
      */
     
-    public static Sistema Sistema_principal = new Sistema();
+    public static Sistema Sistema_principal = new Sistema();        
     public static ControlSesion controlSesion = ControlSesion.getControlSesion();
     
     
@@ -79,6 +80,12 @@ public class VentanaHome extends javax.swing.JFrame {
     }
     
     public VentanaHome() {
+        
+        //*****************************************
+        //Cargar el sistema antiguo si lo hay.
+        SerializacionSistema.CargarSistema();
+        
+        //****************************************
         
         initComponents();
         Login PR = new  Login();
@@ -221,7 +228,14 @@ public class VentanaHome extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 153));
-        setPreferredSize(new java.awt.Dimension(1097, 800));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         Panel_variante.setMaximumSize(new java.awt.Dimension(1000000, 100000));
         Panel_variante.setPreferredSize(new java.awt.Dimension(955, 600));
@@ -480,6 +494,16 @@ public class VentanaHome extends javax.swing.JFrame {
         
         BotonInicio();
     }//GEN-LAST:event_BotonIrHomeActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowClosed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+
+        SerializacionSistema.guardarSistema();
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
