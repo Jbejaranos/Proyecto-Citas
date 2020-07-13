@@ -35,7 +35,12 @@ public class CitasPaciente extends javax.swing.JPanel {
             for (int i = 0; i < this.paciente.getCitasRegistradas().size(); i++){
                 String fecha = getTextoFecha(this.paciente.getCitasRegistradas().get(i).getFecha());
                 String especialidad = this.paciente.getCitasRegistradas().get(i).getEspecialidad();
-                String medico = this.paciente.getCitasRegistradas().get(i).getMedico().getNombre();
+                String medico;
+                if(this.paciente.getCitasRegistradas().get(i).getMedico() != null){
+                    medico = this.paciente.getCitasRegistradas().get(i).getMedico().getNombre();
+                }else{
+                    medico = "No asignado";
+                }
                 String lugar = this.paciente.getCitasRegistradas().get(i).getConsultorio().getSede();
                 model.addRow(new Object[]{fecha, especialidad, medico, lugar});
             }
@@ -164,7 +169,7 @@ public class CitasPaciente extends javax.swing.JPanel {
                 minuto = "" + minute;
             }
             String hora = "Hora: " + horaDia + ":" + minuto + " " + AM_PM + "\n";
-            String medico = "Medico: " + cita.getMedico().getNombre() + "\n";
+            String medico = "Medico: " + ((cita.getMedico() != null) ? cita.getMedico().getNombre() : "No asignado") + "\n";
             String especialidad = "Especialidad: " + cita.getEspecialidad() + "\n";
             String consultorio = "Lugar: Consultorio " + cita.getConsultorio().getNumero() + ", sede " + cita.getConsultorio().getSede() + "\n";
             JOptionPane.showMessageDialog(null, fecha + hora + medico + especialidad + consultorio);
